@@ -6,76 +6,447 @@
     <meta name="description" content="Ramandeep Singh's Website">
     <title>Ramandeep Singh Makkar</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous">
+    <style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
+    color: #eaeaea;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+html {
+    scroll-behavior: smooth;
+}
+section {
+    position: relative;
+    scroll-margin-top: 10px;
+    padding-top: 60px; /* Match the navbar height */
+    margin-top: -60px; 
+     /* Replace 80px with the height of your navbar */
+}
+
+#welcome-section {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px 0;
+    width: 100%; /* Full width */
+    max-width: 100vw; /* Prevent width constraints */
+    margin: 0; /* Remove any accidental margins */
+}
+
+/* Navbar fixes */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Distribute links evenly */
+    padding: 10px 20px;
+    width: 100%; /* Full width */
+    max-width: 100vw; /* Prevent constraints */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    margin: 0; /* Remove accidental margins */
+}
+
+/* Links inside the navbar */
+#navbar a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin: 0 8px; /* Consistent spacing */
+    transition: color 0.2s ease-in-out;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#navbar a:last-child {
+    margin-right: 0;
+}
+
+#navbar a:hover {
+    background-color: #00d4ff;
+    color: #0f2027;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #1a1a1a, #292929);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Portfolio Container */
+.portfolio-container {
+    display: flex;
+    align-items: center;
+    background: #1f2933;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+    max-width: 900px;
+    width: 90%;
+    margin: 40px auto;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00d4ff;
+    margin-right: 30px; /* Added margin-right to create gap */
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+.intro-section {
+    margin-left: 20px; /* Optional: Add margin to the text section for extra spacing */
+}
+
+.intro-section h1 {
+    font-size: 36px;
+    color: #00d4ff;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.intro-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #bfcbd9;
+}
+
+/* Section Styling */
+.w-full {
+    background: #16212d;
+    color: #d4d4d4;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #00d4ff;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Cards */
+.max-w-sm {
+    background: #1f2933;
+    border: 1px solid #2a3a47;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.max-w-sm:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+}
+
+.max-w-sm .font-semibold {
+    color: #00d4ff;
+    font-size: 18px;
+}
+
+.max-w-sm p {
+    color: #c9d6df;
+}
+
+/* Buttons */
+button {
+    background: #00d4ff;
+    color: #0f2027;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #00a3cc;
+    transform: scale(1.05);
+}
+
+/* Badge Styling */
+span.inline-block {
+    background: #2c5364;
+    color: #00d4ff;
+    border-radius: 50px;
+    padding: 8px 14px;
+    margin: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+span.inline-block:hover {
+    background-color: #00d4ff;
+    color: #0f2027;
+}
+
+/* Table Styling (Education Section) */
+.text-left {
+    color: #d4d4d4;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.text-left span {
+    display: block;
+}
+
+.text-left .font-bold {
+    color: #00d4ff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Professional Experience Section */
+#professional-experience {
+    background-color: #1e1e2f; /* Dark theme */
+    color: #ffffff; /* Text color */
+}
+
+#research-experience {
+    background-color: #1e1e2f;
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+#research-experience h2 {
+    color: #00d4ff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.title-and-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.date {
+    font-size: 14px;
+    color: #a0a0a0;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-left: 1.5em;
+}
+
+
+/* Footer Section */
+.w-auto {
+    background-color: #1f2933; /* Matches the portfolio container background */
+    color: #bfcbd9; /* Soft text color for readability on dark backgrounds */
+    border-radius: 8px; /* Slightly rounded corners for a clean look */
+    margin: 20px auto; /* Adds spacing around the section */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+}
+
+.w-auto span {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #bfcbd9; /* Matches the dark theme text color */
+    text-align: left;
+}
+
+.w-auto .w-1/2 {
+    display: flex;
+    gap: 10px; /* Adds spacing between icons */
+    justify-content: center; /* Center-aligns icons */
+    margin-top: 15px;
+}
+
+.w-auto a {
+    color: #00d4ff; /* Highlighted blue for icons */
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.w-auto a:hover {
+    background-color: #00d4ff; /* Blue hover effect */
+    color: #1f2933; /* Changes icon color to match the dark theme */
+    transform: scale(1.1); /* Adds a zoom effect */
+}
+
+
+    </style>
+    
 </head>
+
 <body class="bg-gray-100">
-    <div id="welcome-section" class="w-full bg-cover h-screen cover">
-        <nav id="navbar" class="flex flex-col md:flex-row items-center bg-transparent p-4 justify-between">
+
+    <!-- Header Section with Navbar -->
+    <header id="welcome-section">
+        <nav id="navbar" class="sticky top-0 flex flex-col md:flex-row items-center bg-transparent p-4 justify-between">
             <div class="w-full md:w-auto flex flex-col md:flex-row">
-                <a href="#about-me" class="block mt-4 md:mt-0 text-white hover:text-white mr-4 menu-link">About Me</a>
-                <a href="#professional-experience" class="block mt-4 md:mt-0 text-white hover:text-white mr-4 menu-link">Professional Experience</a>
-                <a href="#portfolio" class="block mt-4 md:mt-0 text-white hover:text-white mr-4 menu-link">Projects</a>
-                <a href="#experience" class="block mt-4 md:mt-0 text-white hover:text-white mr-4 menu-link">Volunteer Experience</a>
-                <a href="#tech" class="block mt-4 md:mt-0 text-white hover:text-white mr-4 menu-link">Tech</a>
-                <a href="#education" class="block mt-4 md:mt-0 text-white hover:text-white menu-link">Education</a>
+                <a href="#about-me" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">About Me</a>
+                <a href="#professional-experience" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Professional Experience</a>
+                <a href="#projects" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Projects</a>
+                <a href="#research-experience" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Research</a>
+                <a href="#achievements" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Achievements</a>
+                <a href="#experience" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Volunteer Experience</a>
+                <a href="#tech" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Technical Skills</a>
+                <a href="#education" class="block mt-4 md:mt-0 text-white hover:text-gray-300 menu-link">Education</a>
+                <a href="#certifications" class="block mt-4 md:mt-0 text-white hover:text-gray-300 menu-link">Certifications</a>
             </div>
         </nav>
+    </header>
 
-        <div class="flex flex-col content-center h-screen bg-transparent text-center">
-            <div class="self-center w-40 h-40 rounded-full bg-blue-500 mx-auto">
-         <!-- <img src="myphoto.jpg" class="rounded-full w-full h-auto" alt="photo"> -->
-                <img src="myphoto.jpg" class="rounded-full w-full h-auto" alt="Ramandeep Singh's Profile Photo">
-
+    <!-- Upper Half Section (Profile + Introduction) -->
+    <section>
+        <div id="about-me" class="w-full bg-gray-100 h-auto text-center py-12 px-6">
+        <div class="portfolio-container">
+            <!-- Profile Picture -->
+            <div class="profile-section">
+                <img src="myphoto.png" alt="My Photo" class="profile-pic">
+            </div>
+            <!-- Introduction Text -->
+            <div class="intro-section">
+                <h1>Hello, I'm Ramandeep Singh</h1>
+                <p>
+                    I am a Data Scientist with expertise in Deep Learning and Machine Learning. 
+                    <!-- and I enjoy turning data into actionable insights! -->
+                </p>
+                <!-- Resume Button -->
+                <a href="https://drive.google.com/file/d/1N6cfxDW3IRauzj3iCYDYL3q4MtjFhaCq/view" target="_blank" rel="noopener noreferrer">
+                    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-blue-600">
+                        Download Resume
+                    </button>
+                </a>
             </div>
         </div>
     </div>
-
-    <div id="about-me" class="w-full bg-gray-100 h-auto text-center">
-        <h2 class="py-16 text-3xl">ABOUT ME</h2>
-        <p class="px-8 pb-16 md:px-20">
-            I'm Ramandeep Singh Makkar, currently pursuing B.Tech in Computer Science and Engineering at JUIT, Solan.
-        </p>
-    </div>
+    </section>
+    
+</body>
+</html>
 
 
+    <!-- Other Sections -->
     <div id="professional-experience" class="w-full bg-gray-100 h-auto text-center py-12 px-6">
         <h2 class="font-semibold text-xl">PROFESSIONAL EXPERIENCE</h2>
         <div class="md:w-3/4 md:mx-auto">
             <p class="m-2">Here is an overview of my professional experience:</p>
             <ul class="list-disc text-left py-8">
                 <li class="py-2">
-                    <strong>Data Scientist Intern</strong> – Parabox(Oct 2024 - Present)<br>
-                    Engineering a deep learning framework for identifying lung cancer nodules with a 10% false-positive reduction target- Python, CNN </br>
-                    Facilitating cross-functional collaboration between technical and medical teams.
-                    Curated and pre-processed 2 datasets for lung nodule analysis- Pandas, NumPy, Data Collection.
-                </li>     
+                    <div class="experience-item">
+                        <div class="title-and-date">
+                            <span class="title"><strong>Data Scientist Intern</strong> – Parabox</span>
+                            <span class="date">(Oct 2024 - Present)</span>
+                        </div>
+                        <p class="description">
+                            Engineering a deep learning framework for identifying lung cancer nodules with a 10% false-positive reduction target (Python, CNN).<br>
+                            Facilitating cross-functional collaboration between technical and medical teams.<br>
+                            Curated and pre-processed 2 datasets for lung nodule analysis (Pandas, NumPy, Data Collection).
+                        </p>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
+    
 
     
-    <div id="portfolio" class="w-full h-auto bg-gray-100 text-center p-4 pb-12">
+    <div id="projects" class="w-full h-auto bg-gray-100 text-center p-4 pb-12">
         <h2 class="font-semibold text-xl py-4">PROJECTS</h2>
         <div class="flex flex-wrap justify-center">
             <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
                 <div class="px-6 py-4">
                     <div class="font-semibold text-xl mb-2">
-                        <a href="https://github.com/RamandeepSinghMakkar/FakeNewsClassifier" class="hover:underline" target="_blank" rel="noopener noreferrer">Fake News Prediction <br>(Jan 2024-Present)</a>
+                     <!-- <a href="https://github.com/RamandeepSinghMakkar/FakeNewsClassifier" class="hover:underline" target="_blank" rel="noopener noreferrer">Fake News Prediction <br>(Jan 2024-Present)</a> -->
                     </div>
                     <p class="text-gray-700 text-base">
-                        Achieved 91% accuracy on a fake news classifier by employing Pytourch.
-                        <br> Tech used: Flask, NLP, Pytourch.
+                        Achieved 91% accuracy on a fake news classifier by employing Pytorch.
+                        <br> Tech used: Flask, NLP, Pytorch.
                         
                     </p>
                 </div>
             </div>
+
+            <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
+                <div class="px-6 py-4">
+                    <!-- <img src="example-project.jpg" alt="Project Example" /> -->
+                    <div class="font-semibold text-xl mb-2">Project Title</div>
+                    <p class="text-gray-700 text-base">Description of the project...</p>
+                </div>
+            </div>
+
+            
             <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
                 <div class="px-6 py-4">
                     <div class="font-semibold text-xl mb-2">
-                        <a href="https://github.com/RamandeepSinghMakkar/QuizServlet" class="hover:underline" target="_blank" rel="noopener noreferrer">Java Quiz Application</a>
-                    </div>
-     
+                        <!-- <a href="https://github.com/RamandeepSinghMakkar/QuizServlet" class="hover:underline" target="_blank" rel="noopener noreferrer">Java Quiz Application</a> -->
+                    </div>  
                     <p class="text-gray-700 text-base">
                         A basic quiz made using Java Servlets and MySQL as database. The quiz consists of 15 unique and randomly selected questions from a pool of 150 questions.
                     </p>
@@ -84,7 +455,7 @@
             <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
                 <div class="px-6 py-4">
                     <div class="font-semibold text-xl mb-2">
-                        <a href="https://github.com/RamandeepSinghMakkar/PersonalWebpage" class="hover:underline" target="_blank" rel="noopener noreferrer">Personal Webpage</a>
+                        <!-- <a href="https://github.com/RamandeepSinghMakkar/PersonalWebpage" class="hover:underline" target="_blank" rel="noopener noreferrer">Personal Webpage</a> -->
                     </div>
                     <p class="text-gray-700 text-base">
                         My own responsive personal webpage showing my skills, projects, education and GitHub and LinkedIn links.
@@ -144,7 +515,7 @@
             <ul class="list-disc text-left py-8">
                 <!-- <li class="py-2">3rd Place in the 'Clear Vision' AI/ML competition at JUIT, October 2024</li> https://drive.google.com/drive/u/1/folders/1VTOio0UBqmfc759u0Wu671-qkGbg2xMA -->
                 <li class="py-2">3rd Place in the 'Clear Vision' AI/ML competition at JUIT, October 2024 <a href="https://drive.google.com/drive/u/1/folders/1VTOio0UBqmfc759u0Wu671-qkGbg2xMA" target="_blank" class="text-blue-600 underline">View Certificate</a></li>
-                <ul>
+                
                     <li class="py-2">
                         3rd Place in the 'AI Debate Competition' at JUIT, March 2024 
                         <a href="https://drive.google.com/drive/u/1/folders/1d_AmyUonlmcpi-qxEcjEPmdVBQUhUK0p" target="_blank" class="text-blue-600 underline">View Certificate</a>
@@ -289,18 +660,48 @@
     </div>
     
 
-    <div class="w-auto bg-gray-200 h-auto p-6">
-        <span id="name" class="text-left p-4 pl-0 md:pl-8">Developed by Ramandeep Singh Makkar (11-01-2024)</span>
-        <span id="name" class="text-left p-4 pl-0 md:pl-8">Last Updated: 10-11-2024</span>
-        <div class="w-1/2 md:w-1/6 my-4 flex justify-around">
-            <a href="mailto:ramandeepsinghmakkar199@gmail.com" aria-label="Email" class="px-4 py-1 hover:bg-gray-500" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/ramandeep-singh-makkar/" aria-label="Linkedin" class="px-4 py-1 hover:bg-gray-500" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/RamandeepSinghMakkar" aria-label="GitHub" class="px-4 py-1 hover:bg-gray-500" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+
+    <footer class="w-full bg-gray-800 text-white text-center py-4">
+        <p>&copy; 2024 Ramandeep Singh Makkar. All rights reserved.</p>
+        <div class="flex justify-center gap-4 mt-2">
+            <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ramandeep-singh-makkar" class="hover:text-gray-400">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </div>
-    </div>
-
+    </footer>
     
+    <script>
+        function setVisibility() {
+            const elements = document.querySelectorAll('.view-more');
+            const button = document.getElementById('view-projects');
+            const isHidden = elements[0].style.display === 'none';
+            
+            elements.forEach(el => {
+                el.style.display = isHidden ? 'block' : 'none';
+            });
+            
+            button.textContent = isHidden ? 'VIEW LESS' : 'VIEW MORE';
+        }
 
+        document.querySelectorAll('#navbar a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default scrolling
+        const targetId = e.target.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        const offset = 100; // Height of the navbar
+        const topPosition = targetSection.offsetTop - offset;
+
+        window.scrollTo({
+            top: topPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+
+    </script>
 
 <script src="index.js"></script>
 </body>
