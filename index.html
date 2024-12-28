@@ -23,9 +23,9 @@ html {
 section {
     position: relative;
     scroll-margin-top: 10px;
-    padding-top: 60px; /* Match the navbar height */
+    padding-top: 60px; 
     margin-top: -60px; 
-     /* Replace 80px with the height of your navbar */
+    
 }
 
 #welcome-section {
@@ -34,24 +34,22 @@ section {
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 5px 0;
-    width: 100%; /* Full width */
-    max-width: 100vw; /* Prevent width constraints */
-    margin: 0; /* Remove any accidental margins */
+    width: 100%; 
+    max-width: 100vw; 
+    margin: 0; 
 }
 
-/* Navbar fixes */
 #navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around; /* Distribute links evenly */
+    justify-content: space-around; 
     padding: 10px 20px;
-    width: 100%; /* Full width */
-    max-width: 100vw; /* Prevent constraints */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    margin: 0; /* Remove accidental margins */
+    width: 100%;  
+    max-width: 100vw; 
+    box-sizing: border-box; 
+    margin: 0; 
 }
 
-/* Links inside the navbar */
 #navbar a {
     text-decoration: none;
     color: #f5f5f5;
@@ -107,7 +105,7 @@ nav {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #00d4ff;
-    margin-right: 30px; /* Added margin-right to create gap */
+    margin-right: 30px; 
     transition: transform 0.3s ease;
 }
 
@@ -116,7 +114,7 @@ nav {
 }
 
 .intro-section {
-    margin-left: 20px; /* Optional: Add margin to the text section for extra spacing */
+    margin-left: 20px; 
 }
 
 .intro-section h1 {
@@ -147,7 +145,7 @@ h2 {
     animation: fadeInUp 1.2s ease-in-out;
 }
 
-/* Cards */
+
 .max-w-sm {
     background: #1f2933;
     border: 1px solid #2a3a47;
@@ -171,7 +169,7 @@ h2 {
     color: #c9d6df;
 }
 
-/* Buttons */
+
 button {
     background: #00d4ff;
     color: #0f2027;
@@ -189,7 +187,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Badge Styling */
+
 span.inline-block {
     background: #2c5364;
     color: #00d4ff;
@@ -205,7 +203,6 @@ span.inline-block:hover {
     color: #0f2027;
 }
 
-/* Table Styling (Education Section) */
 .text-left {
     color: #d4d4d4;
     font-size: 16px;
@@ -220,7 +217,7 @@ span.inline-block:hover {
     color: #00d4ff;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -254,10 +251,10 @@ span.inline-block:hover {
     }
 }
 
-/* Professional Experience Section */
+
 #professional-experience {
-    background-color: #1e1e2f; /* Dark theme */
-    color: #ffffff; /* Text color */
+    background-color: #1e1e2f; 
+    color: #ffffff; 
 }
 
 #research-experience {
@@ -300,7 +297,7 @@ span.inline-block:hover {
 }
 
 
-/* Footer Section */
+
 .w-auto {
     background-color: #1f2933; /* Matches the portfolio container background */
     color: #bfcbd9; /* Soft text color for readability on dark backgrounds */
@@ -358,6 +355,14 @@ span.inline-block:hover {
                 <a href="#tech" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Technical Skills</a>
                 <a href="#education" class="block mt-4 md:mt-0 text-white hover:text-gray-300 menu-link">Education</a>
                 <a href="#certifications" class="block mt-4 md:mt-0 text-white hover:text-gray-300 menu-link">Certifications</a>
+                
+                    <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ramandeep-singh-makkar" class="hover:text-gray-400">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+              
             </div>
         </nav>
     </header>
@@ -423,42 +428,55 @@ span.inline-block:hover {
             <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
                 <div class="px-6 py-4">
                     <div class="font-semibold text-xl mb-2">
-                     <!-- <a href="https://github.com/RamandeepSinghMakkar/FakeNewsClassifier" class="hover:underline" target="_blank" rel="noopener noreferrer">Fake News Prediction <br>(Jan 2024-Present)</a> -->
+                        <img src="example-project.jpg" /> 
+                      <a href="https://github.com/RamandeepSinghMakkar/FakeNewsClassifier" class="hover:underline" target="_blank" rel="noopener noreferrer">Fake News Classifier <br></a> 
                     </div>
                     <p class="text-gray-700 text-base">
-                        Achieved 91% accuracy on a fake news classifier by employing Pytorch.
-                        <br> Tech used: Flask, NLP, Pytorch.
+                        1) Built a fully connected PyTorch-based neural network achieving 91% accuracy, leveraging a custom TF-IDF vectorizer trained on preprocessed text data to extract meaningful features.
+                     <br>   2)  Designed and deployed an interactive Flask-based web application integrated with MySQL, enabling efficient storage of predictions, user feedback, and queries.
+                        <br> Tech used: Flask, MYSQL, NLP, Pytorch.
                         
+                    </p>
+                </div>
+            </div>
+
+           
+
+            
+            <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
+                <div class="px-6 py-4">
+                    <div class="font-semibold text-xl mb-2">
+                        <img src="movie.png" /> 
+                        
+                          <a href="https://github.com/RamandeepSinghMakkar/Movie-Recommendation" class="hover:underline" target="_blank" rel="noopener noreferrer">Movie Recommendation System</a> 
+                    </div>  
+                    <p class="text-gray-700 text-base">
+                        1) Developed a movie recommendation system utilizing collaborative and content-based filtering methods; integrated real-time data via Web API, resulting in an impressive precision rate of 0.88 while personalizing user interactions with tailored content.
+ <br> 2) Designed a modular data pipeline for preprocessing and vectorizing movie data with CountVectorizer and cosine similarity, resulting in improved recommendation accuracy and efficiency.
+                   <br> Tech used: MYSQL, NLP, webAPI.
                     </p>
                 </div>
             </div>
 
             <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
                 <div class="px-6 py-4">
-                    <!-- <img src="example-project.jpg" alt="Project Example" /> -->
-                    <div class="font-semibold text-xl mb-2">Project Title</div>
-                    <p class="text-gray-700 text-base">Description of the project...</p>
-                </div>
+                    <div class="font-semibold text-xl mb-2">
+                        <a href="https://github.com/RamandeepSinghMakkar/IPL-Score-Prediction" class="hover:underline" target="_blank" rel="noopener noreferrer">IPL Score Prediction</a> 
+                      </div>
+                      <p class="text-gray-700 text-base">
+                        Batting team, bowling team, overs, wickets fell, etc have to be input to get the final predicted score at any time of the game to predict score.
+                          <br> Tech used: Decision Trees, Linear Regression, Random Forest, Lasso Regression, Support Vector Machine, Neural Networks.
+                      </p>
             </div>
 
-            
             <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
                 <div class="px-6 py-4">
                     <div class="font-semibold text-xl mb-2">
-                        <!-- <a href="https://github.com/RamandeepSinghMakkar/QuizServlet" class="hover:underline" target="_blank" rel="noopener noreferrer">Java Quiz Application</a> -->
-                    </div>  
-                    <p class="text-gray-700 text-base">
-                        A basic quiz made using Java Servlets and MySQL as database. The quiz consists of 15 unique and randomly selected questions from a pool of 150 questions.
-                    </p>
-                </div>
-            </div>
-            <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
-                <div class="px-6 py-4">
-                    <div class="font-semibold text-xl mb-2">
-                        <!-- <a href="https://github.com/RamandeepSinghMakkar/PersonalWebpage" class="hover:underline" target="_blank" rel="noopener noreferrer">Personal Webpage</a> -->
+                      <a href="https://github.com/RamandeepSinghMakkar/PersonalWebpage" class="hover:underline" target="_blank" rel="noopener noreferrer">Personal Webpage</a> 
                     </div>
                     <p class="text-gray-700 text-base">
-                        My own responsive personal webpage showing my skills, projects, education and GitHub and LinkedIn links.
+                        My own responsive personal webpage showing my skills, projects, education and GitHub and LinkedIn links on <a href="https://ramandeepsinghmakkar-portfolio.netlify.app" class="hover:underline" > Netlify.</a>
+                        <br> Tech used: Netlify, HTML, CSS, JavaScript
                     </p>
                 </div>
             </div>
