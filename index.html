@@ -436,37 +436,52 @@ span.inline-block:hover {
 }
 
     </style>
-    
+   <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      var navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('hidden');
+    });
+  </script>
+  
+      
 </head>
 
 <body class="bg-gray-100">
 
-    <!-- Header Section with Navbar -->
-    <header id="welcome-section">
-        <nav id="navbar" class="sticky top-0 flex flex-col md:flex-row items-center bg-transparent p-4 justify-between">
-            <div class="w-full md:w-auto flex flex-col md:flex-row">
-                <a href="#about-me" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">About Me</a>
-                <a href="#professional-experience" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Professional Experience</a>
-                <a href="#projects" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Projects</a>
-                <a href="#research-experience" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Research</a>
-                <a href="#achievements" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Achievements</a>
-                <a href="#experience" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Volunteer Experience</a>
-                <a href="#tech" class="block mt-4 md:mt-0 text-white hover:text-gray-300 mr-4 menu-link">Technical Skills</a>
-                <a href="#education" class="block mt-4 md:mt-0 text-white hover:text-gray-300 menu-link">Education</a>
-                <a href="#certifications" class="block mt-4 md:mt-0 text-white hover:text-gray-300 menu-link">Certifications</a>
-                
-                    <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ramandeep-singh-makkar" class="hover:text-gray-400">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-
-
-                
-            </div>
-        </nav>
-    </header>
+   <!-- Header Section with Navbar -->
+<header id="welcome-section">
+    <nav id="navbar" class="sticky top-0 flex flex-col md:flex-row items-center bg-transparent p-4 justify-between">
+      <!-- Mobile: Hamburger & optional branding -->
+      <div class="w-full flex justify-between md:hidden">
+        <!-- Optional: Add your logo or brand name here -->
+        <div class="text-white text-xl font-bold">Ramandeep Singh</div>
+        <button id="hamburger" class="text-white focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <!-- Navigation Links -->
+      <!-- For desktop: always visible (using md:flex) -->
+      <!-- For mobile: hidden by default and toggled via JavaScript -->
+      <div id="nav-links" class="w-full md:w-auto flex flex-col md:flex-row items-center md:space-x-4 mt-4 md:mt-0 hidden md:flex">
+        <a href="#about-me" class="block text-white hover:text-gray-300 mr-4 menu-link">About Me</a>
+        <a href="#professional-experience" class="block text-white hover:text-gray-300 mr-4 menu-link">Professional Experience</a>
+        <a href="#projects" class="block text-white hover:text-gray-300 mr-4 menu-link">Projects</a>
+        <a href="#research-experience" class="block text-white hover:text-gray-300 mr-4 menu-link">Research</a>
+        <a href="#achievements" class="block text-white hover:text-gray-300 mr-4 menu-link">Achievements</a>
+        <a href="#experience" class="block text-white hover:text-gray-300 mr-4 menu-link">Volunteer Experience</a>
+        <a href="#tech" class="block text-white hover:text-gray-300 mr-4 menu-link">Technical Skills</a>
+        <a href="#education" class="block text-white hover:text-gray-300 mr-4 menu-link">Education</a>
+        <a href="#certifications" class="block text-white hover:text-gray-300 menu-link">Certifications</a>
+        <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ramandeep-singh-makkar" class="hover:text-gray-400">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+  
 
     <!-- Upper Half Section (Profile + Introduction) -->
     <section>
