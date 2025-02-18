@@ -1,4 +1,4 @@
-
+  
 /*========================================
   Global Styles & Reset
 ========================================*/
@@ -360,3 +360,66 @@ span.inline-block:hover {
   transform: scale(1.1);
 }
 
+/*========================================
+  Mobile Styles (for screens below 768px)
+========================================*/
+@media (max-width: 768px) {
+  /* Navbar: Stack items vertically */
+  nav {
+    flex-direction: column;
+    padding: 10px 15px;
+    align-items: flex-start;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+  #navbar a {
+    margin: 4px 0;
+    font-size: 0.95rem;
+  }
+
+  /* Portfolio Container: Stack content vertically */
+  .portfolio-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .profile-pic {
+    margin: 0 auto 20px auto;
+    width: 150px;
+    height: 150px;
+  }
+  .intro-section {
+    margin-left: 0;
+  }
+
+  /* Headings & Text */
+  h2 {
+    font-size: 24px;
+  }
+  .intro-section h1 {
+    font-size: 28px;
+  }
+  .intro-section p {
+    font-size: 16px;
+  }
+
+  /* Cards: Adjust margins */
+  .max-w-sm {
+    margin: 10px auto;
+  }
+
+  /* Section Padding: Reduce spacing */
+  .w-full {
+    padding: 20px 10px;
+  }
+
+  /* Optional: Improve button touch targets */
+  button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
