@@ -521,19 +521,23 @@ Facilitated cross-functional collaboration between technical and medical teams t
         }
 
         document.querySelectorAll('#navbar a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default scrolling
-        const targetId = e.target.getAttribute('href').slice(1);
-        const targetSection = document.getElementById(targetId);
-        const offset = 100; // Height of the navbar
-        const topPosition = targetSection.offsetTop - offset;
-
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    // Only prevent default for internal links starting with "#"
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetSection = document.getElementById(href.slice(1));
+      const offset = 100; // Adjust according to your navbar height
+      if (targetSection) {
         window.scrollTo({
-            top: topPosition,
-            behavior: 'smooth'
+          top: targetSection.offsetTop - offset,
+          behavior: 'smooth'
         });
-    });
+      }
+    }
+  });
 });
+
 
     </script>
 <script>
