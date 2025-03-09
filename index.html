@@ -64,7 +64,7 @@
                     <!-- and I enjoy turning data into actionable insights! -->
                 </p>
                 <!-- Resume Button -->
-                <a href="https://drive.google.com/file/d/1QKwZXA4tKgevGPLDr4sT2DjThBwad7Bm/view?usp=share_link" target="_blank" rel="noopener noreferrer">
+                <a href="https://drive.google.com/file/d/14EoJ5_MSqNWND9Z5IQ76ydwjlOHCB3SY/view?usp=share_link" target="_blank" rel="noopener noreferrer">
                     <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-blue-600">
                         Download Resume
                     </button>
@@ -146,6 +146,28 @@ improving accuracy by 2-3%.<br>
                       </p>
             </div>
         </div>
+
+        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
+            <div class="px-6 py-4">
+                <div class="font-semibold text-xl mb-2">
+                    <a href="https://github.com/RamandeepSinghMakkar/Churn-Analysis-Prediction-Tableau-ML" class="hover:underline" target="_blank" rel="noopener noreferrer"> Churn Prediction</a> 
+                    <img src="imagedehazing.png" /> 
+                  </div>
+                  <p class="text-gray-700 text-base">
+                    1) Customer churn is a critical issue for businesses, and analyzing churn patterns helps in developing retention strategies. This project consists of two key parts:
+                    1) Churn Analysis
+                    2) Churn Prediction
+             
+                    <br> <br>Tech used: Tableau, Logistic Regression ,Random Forest, KNN.
+                    <div class="font-semibold text-xl mb-2">
+                    <br>  <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnAnalysis_17410739474400/ChurnAnalysis" class="hover:underline" target="_blank" rel="noopener noreferrer">Churn Analysis</a>
+                    <br>  <a href=" https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnPredictionAnalysis_17410735985500/PREDICTIVEANALYTICS" class="hover:underline" target="_blank" rel="noopener noreferrer">Churn Prediction</a>  
+                   </p>
+                 </div>
+
+                  </p>
+        </div>
+    </div>
 
 
             <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
@@ -486,6 +508,21 @@ improving accuracy by 2-3%.<br>
         navLinks.classList.toggle("hidden");
       });
     });
+  </script>
+  
+<script>
+    function toggleProjects() {
+      const moreProjects = document.getElementById("more-projects");
+      const button = document.getElementById("view-projects");
+      
+      if (moreProjects.style.display === "none") {
+        moreProjects.style.display = "flex"; // show extra projects
+        button.textContent = "VIEW LESS";
+      } else {
+        moreProjects.style.display = "none"; // hide extra projects
+        button.textContent = "VIEW MORE";
+      }
+    }
   </script>
   
 <script src="index.js"></script>
