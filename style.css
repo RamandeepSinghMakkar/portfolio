@@ -1,7 +1,15 @@
-  
 /*========================================
   Global Styles & Reset
 ========================================*/
+:root {
+  --primary-color: #00d4ff;       /* Neon blue accent */
+  --primary-alt: #66eaff;         /* Lighter neon blue for subtle shifting */
+  --secondary-color: #ffffff;     /* White for text */
+  --bg-dark: #0b0c10;             /* Dark navy (instead of pure black) */
+  --bg-darker: #161a1d;           /* Slightly lighter dark navy */
+  --bg-light: #1f2833;            /* Dark blue-gray for cards & containers */
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -10,9 +18,18 @@ body {
   margin: 0;
   cursor: default;
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
-  color: #eaeaea;
+  /* Dark navy gradient background with a subtle animated blend */
+  background: radial-gradient(circle, var(--bg-dark), var(--bg-darker), var(--bg-light));
+  animation: backgroundAnimation 15s ease infinite;
+  color: var(--secondary-color);
   line-height: 1.6;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+  0% { background: radial-gradient(circle, var(--bg-dark), var(--bg-darker), var(--bg-light)); }
+  50% { background: radial-gradient(circle, var(--bg-darker), var(--bg-light), var(--bg-dark)); }
+  100% { background: radial-gradient(circle, var(--bg-dark), var(--bg-darker), var(--bg-light)); }
 }
 
 /* Utility */
@@ -26,6 +43,7 @@ body {
 .cover {
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(myphoto.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /*========================================
@@ -34,8 +52,8 @@ body {
 #welcome-section,
 #experience,
 #education {
-  background-color: #292929;
-  color: white;
+  background-color: var(--bg-darker);
+  color: var(--secondary-color);
 }
 
 .menu-link {
@@ -49,7 +67,7 @@ body {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #fff;
+  background-color: var(--secondary-color);
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
@@ -59,15 +77,17 @@ body {
   transform-origin: bottom left;
 }
 
+/* Navbar with frosted glass effect */
 #welcome-section {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 5px 0;
   width: 100%;
   max-width: 100vw;
   margin: 0;
+  backdrop-filter: blur(10px);
 }
 
 #navbar {
@@ -83,21 +103,24 @@ body {
 
 #navbar a {
   text-decoration: none;
-  color: #f5f5f5;
+  color: var(--secondary-color);
   font-size: 0.875rem;
   font-weight: 500;
   padding: 4px 8px;
   border-radius: 5px;
   margin: 0 8px;
   white-space: nowrap;
-  transition: color 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  /* Neon glow effect on text */
+  text-shadow: 0 0 3px var(--primary-color);
 }
 #navbar a:last-child {
   margin-right: 0;
 }
 #navbar a:hover {
-  background-color: #00d4ff;
-  color: #0f2027;
+  background-color: var(--primary-color);
+  color: var(--bg-dark);
+  box-shadow: 0 0 8px var(--primary-color);
 }
 
 nav {
@@ -105,9 +128,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: linear-gradient(90deg, #1a1a1a, #292929);
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background: var(--bg-darker);
+  color: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -121,20 +144,25 @@ section {
   scroll-margin-top: 10px;
   padding-top: 60px;
   margin-top: -60px;
+  /* Fade-in animation for smoother reveal */
+  opacity: 0;
+  animation: fadeInSection 1s forwards;
+  animation-delay: 0.3s;
 }
 
 .w-full {
-  background: #16212d;
-  color: #d4d4d4;
+  background: var(--bg-darker);
+  color: var(--secondary-color);
   padding: 40px 20px;
 }
 
 h2 {
   font-size: 28px;
-  color: #00d4ff;
   margin-bottom: 20px;
   text-align: center;
-  animation: fadeInUp 1.2s ease-in-out;
+  /* Fade in with subtle neon color shifting and glowing text */
+  animation: fadeInUp 1.2s ease-in-out, colorShift 5s infinite;
+  text-shadow: 0 0 8px var(--primary-color), 0 0 12px var(--primary-alt);
 }
 
 /*========================================
@@ -143,10 +171,10 @@ h2 {
 .portfolio-container {
   display: flex;
   align-items: center;
-  background: #1f2933;
+  background: var(--bg-light);
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
   max-width: 900px;
   width: 90%;
   margin: 40px auto;
@@ -158,9 +186,12 @@ h2 {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #00d4ff;
+  border: 4px solid var(--primary-color);
   margin-right: 30px;
   transition: transform 0.3s ease;
+  /* Continuous floating animation with an extra drop-shadow glow */
+  animation: float 3s ease-in-out infinite;
+  box-shadow: 0 0 8px var(--primary-color);
 }
 .profile-pic:hover {
   transform: scale(1.1);
@@ -171,45 +202,48 @@ h2 {
 }
 .intro-section h1 {
   font-size: 36px;
-  color: #00d4ff;
+  color: var(--primary-color);
   margin-bottom: 10px;
   animation: fadeInDown 1s ease-in-out;
+  text-shadow: 0 0 6px var(--primary-color);
 }
 .intro-section p {
   font-size: 18px;
   line-height: 1.8;
-  color: #bfcbd9;
+  color: var(--secondary-color);
 }
 
 /*========================================
   Card Components
 ========================================*/
 .max-w-sm {
-  background: #1f2933;
-  border: 1px solid #2a3a47;
+  background: var(--bg-light);
+  border: 1px solid var(--bg-darker);
   border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 .max-w-sm:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+  filter: brightness(1.05);
 }
 .max-w-sm .font-semibold {
-  color: #00d4ff;
+  color: var(--primary-color);
   font-size: 18px;
+  text-shadow: 0 0 4px var(--primary-color);
 }
 .max-w-sm p {
-  color: #c9d6df;
+  color: var(--secondary-color);
 }
 
 /*========================================
   Buttons & Inline Elements
 ========================================*/
 button {
-  background: #00d4ff;
-  color: #0f2027;
+  background: var(--primary-color);
+  color: var(--bg-dark);
   border: none;
   border-radius: 5px;
   padding: 12px 20px;
@@ -217,15 +251,17 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
+  text-shadow: 0 0 3px var(--primary-color);
 }
 button:hover {
   background: #00a3cc;
   transform: scale(1.05);
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 span.inline-block {
-  background: #2c5364;
-  color: #00d4ff;
+  background: var(--bg-darker);
+  color: var(--primary-color);
   border-radius: 50px;
   padding: 8px 14px;
   margin: 5px;
@@ -233,13 +269,13 @@ span.inline-block {
   transition: background-color 0.3s ease;
 }
 span.inline-block:hover {
-  background-color: #00d4ff;
-  color: #0f2027;
+  background-color: var(--primary-color);
+  color: var(--bg-dark);
 }
 
 /* Text Helpers */
 .text-left {
-  color: #d4d4d4;
+  color: var(--secondary-color);
   font-size: 16px;
   line-height: 1.5;
 }
@@ -247,7 +283,7 @@ span.inline-block:hover {
   display: block;
 }
 .text-left .font-bold {
-  color: #00d4ff;
+  color: var(--primary-color);
 }
 
 /*========================================
@@ -283,21 +319,38 @@ span.inline-block:hover {
     transform: translateY(0);
   }
 }
+@keyframes fadeInSection {
+  to { opacity: 1; }
+}
+
+/* Subtle neon color shift for headings */
+@keyframes colorShift {
+  0% { color: var(--primary-color); }
+  50% { color: var(--primary-alt); }
+  100% { color: var(--primary-color); }
+}
+
+/* Floating animation for the profile picture */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
 
 /*========================================
   Experience & Research Sections
 ========================================*/
 #professional-experience {
-  background-color: #1e1e2f;
-  color: #ffffff;
+  background-color: var(--bg-darker);
+  color: var(--secondary-color);
 }
 #research-experience {
-  background-color: #1e1e2f;
-  color: #ffffff;
+  background-color: var(--bg-darker);
+  color: var(--secondary-color);
   padding: 40px 20px;
 }
 #research-experience h2 {
-  color: #00d4ff;
+  color: var(--primary-color);
   margin-bottom: 20px;
   text-align: center;
 }
@@ -328,11 +381,11 @@ span.inline-block:hover {
   W-Auto Section (Social & Icons)
 ========================================*/
 .w-auto {
-  background-color: #1f2933;
+  background-color: var(--bg-light);
   color: #bfcbd9;
   border-radius: 8px;
   margin: 20px auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
 .w-auto span {
   display: block;
@@ -348,15 +401,15 @@ span.inline-block:hover {
   margin-top: 15px;
 }
 .w-auto a {
-  color: #00d4ff;
+  color: var(--primary-color);
   font-size: 20px;
   padding: 8px;
   border-radius: 50%;
   transition: background-color 0.3s, transform 0.3s ease;
 }
 .w-auto a:hover {
-  background-color: #00d4ff;
-  color: #1f2933;
+  background-color: var(--primary-color);
+  color: var(--bg-dark);
   transform: scale(1.1);
 }
 
@@ -364,7 +417,6 @@ span.inline-block:hover {
   Mobile Styles (for screens below 768px)
 ========================================*/
 @media (max-width: 768px) {
-  /* Navbar: Stack items vertically */
   nav {
     flex-direction: column;
     padding: 10px 15px;
@@ -380,8 +432,6 @@ span.inline-block:hover {
     margin: 4px 0;
     font-size: 0.95rem;
   }
-
-  /* Portfolio Container: Stack content vertically */
   .portfolio-container {
     flex-direction: column;
     text-align: center;
@@ -395,8 +445,6 @@ span.inline-block:hover {
   .intro-section {
     margin-left: 0;
   }
-
-  /* Headings & Text */
   h2 {
     font-size: 24px;
   }
@@ -406,20 +454,45 @@ span.inline-block:hover {
   .intro-section p {
     font-size: 16px;
   }
-
-  /* Cards: Adjust margins */
   .max-w-sm {
     margin: 10px auto;
   }
-
-  /* Section Padding: Reduce spacing */
   .w-full {
     padding: 20px 10px;
   }
-
-  /* Optional: Improve button touch targets */
   button {
     padding: 10px 16px;
     font-size: 14px;
   }
+}
+
+/*========================================
+  Additional Improvements
+========================================*/
+/* Footer icon hover effect */
+footer a:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
+}
+
+/* View More button hover transition */
+#view-projects {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transition for certification cards */
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+}
+
+/*========================================
+  Certificate Images Adjustments
+========================================*/
+/* Adjust certificate images to tone down their brightness */
+.certification-card img {
+  filter: brightness(0.7) contrast(1.2);
+  border: 2px solid var(--bg-darker);
+  border-radius: 5px;
 }
