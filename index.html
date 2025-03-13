@@ -8,7 +8,7 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous" />
-  <!-- Additional inline styles for dynamic effects -->
+  <!-- Additional inline styles for dynamic effects and enhanced text styling -->
   <style>
     /* Back-to-top button & Particles container */
     #particles-js {
@@ -60,6 +60,28 @@
     #education,
     #certifications {
       margin-bottom: 40px;
+    }
+    /* Enhanced text styling for dynamic, eye-catching content */
+    .section-heading {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--primary-color);
+      text-shadow: 0 0 8px var(--primary-color), 0 0 12px var(--primary-alt);
+      margin-bottom: 1rem;
+    }
+    .section-text {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--secondary-color);
+      text-shadow: 0 0 4px rgba(0,212,255,0.5);
+      margin-bottom: 1rem;
+    }
+    .section-list li {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      color: var(--secondary-color);
+      text-shadow: 0 0 4px rgba(0,212,255,0.3);
     }
   </style>
 </head>
@@ -114,8 +136,8 @@
         </div>
         <!-- Introduction Text -->
         <div class="intro-section">
-          <h1>Hello, I'm Ramandeep Singh</h1>
-          <p>
+          <h1 class="section-heading">Hello, I'm Ramandeep Singh</h1>
+          <p class="section-text">
             I am a Data Scientist with expertise in Deep Learning and Machine Learning.
           </p>
           <!-- Resume Button -->
@@ -131,17 +153,17 @@
   
   <!-- Professional Experience Section -->
   <div id="professional-experience" class="w-full bg-gray-100 h-auto text-center py-12 px-6">
-    <h2 class="font-semibold text-xl">PROFESSIONAL EXPERIENCE</h2>
+    <h2 class="section-heading">PROFESSIONAL EXPERIENCE</h2>
     <div class="md:w-3/4 md:mx-auto">
-      <p class="m-2">Here is an overview of my professional experience:</p>
-      <ul class="list-disc text-left py-8">
+      <p class="section-text">Here is an overview of my professional experience:</p>
+      <ul class="list-disc text-left section-list py-8">
         <li class="py-2">
           <div class="experience-item">
             <div class="title-and-date">
               <span class="title"><strong>Data Scientist Intern</strong> – Parabox -Remote</span>
               <span class="date">(Oct 2024 - Dec 2024)</span>
             </div>
-            <p class="description">
+            <p class="description section-text">
               Engineered a hybrid ensemble model that integrates a finely tuned XGBoost and CNN, leveraging a weighted
               probability averaging technique to boost predictive performance and achieve an accuracy of 97%.<br>
               Implemented advanced image pre-processing methods, including median blur and Total Variation (TV)
@@ -156,8 +178,8 @@
   
   <!-- Projects Section -->
   <div id="projects" class="w-full h-auto bg-gray-100 text-center p-4 pb-12">
-    <h2 class="font-semibold text-xl py-4">PROJECTS</h2>
-    <!-- Changed container to grid for 4 projects per row on medium screens -->
+    <h2 class="section-heading">PROJECTS</h2>
+    <!-- Grid for 4 projects per row on medium screens -->
     <div id="visible-projects" class="grid grid-cols-1 md:grid-cols-4 gap-6">
       <!-- JUIT Chatbot -->
       <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded">
@@ -168,7 +190,7 @@
             </a>
             <img src="chatbot.png" alt="JUIT Chatbot" />
           </div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             1) Built a conversational AI chatbot for JUIT, using Hugging Face API and Flask backend. The bot leverages a
             dataset of 534 training intents and spaCy to craft context-aware responses.<br>
             2) Optimized the training pipeline for low-resource systems, achieving an overall accuracy of 94%.<br><br>
@@ -191,7 +213,7 @@
             </a>
             <img src="imagedehazing.png" alt="Image Dehazing" />
           </div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             1) Achieved 72% accuracy in image dehazing using a single FFA-Net model.<br>
             2) Designed a 3D attention mechanism to enhance feature extraction, significantly improving visibility restoration.<br><br>
             Tech used: Python, React.js, Flask, OpenCV, PIL, Pytorch, Keras.
@@ -213,7 +235,7 @@
             </a>
             <img src="churn.png" alt="Churn Prediction" />
           </div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             1) Customer churn is a critical issue for businesses, and analyzing churn patterns helps in developing retention strategies. This project consists of two key parts:
             1) Churn Analysis<br>
             2) Churn Prediction<br><br>
@@ -240,7 +262,7 @@
             </a>
             <img src="movie.png" alt="Movie Recommendation System" />
           </div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             1) Developed a movie recommendation system utilizing collaborative and content-based filtering methods; integrated real-time data via Web API, resulting in an impressive precision rate of 0.88 while personalizing user interactions with tailored content.<br>
             2) Designed a modular data pipeline for preprocessing and vectorizing movie data with CountVectorizer and cosine similarity, resulting in improved recommendation accuracy and efficiency.<br><br>
             Tech used: MYSQL, NLP, webAPI.
@@ -259,7 +281,7 @@
             </a>
             <img src="portfolio.png" alt="Personal Webpage" />
           </div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             My own responsive personal webpage showing my skills, projects, education and GitHub and LinkedIn links on
             <a href="https://ramandeepsinghmakkar-portfolio.netlify.app" class="hover:underline">Netlify</a>.<br><br>
             Tech used: Netlify, HTML, CSS, JavaScript.
@@ -274,7 +296,7 @@
               Fake News Classifier
             </a>
           </div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             1) Built a fully connected PyTorch-based neural network achieving 91% accuracy, leveraging a custom TF-IDF vectorizer trained on preprocessed text data to extract meaningful features.<br>
             2) Designed and deployed an interactive Flask-based web application integrated with MySQL, enabling efficient storage of predictions, user feedback, and queries.<br><br>
             Tech used: Flask, MYSQL, NLP, Pytorch.
@@ -289,7 +311,7 @@
               IPL Score Prediction
             </a>
           </div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             Batting team, bowling team, overs, wickets fell, etc have to be input to get the final predicted score at any time of the game to predict score.<br><br>
             Tech used: Decision Trees, Linear Regression, Random Forest, Lasso Regression, Support Vector Machine, Neural Networks.
           </p>
@@ -299,7 +321,7 @@
       <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl mb-2">Stopwatch</div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             A basic stopwatch made using HTML, CSS, and JavaScript.
           </p>
         </div>
@@ -308,7 +330,7 @@
       <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl mb-2">TIC TAC TOE GAME</div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             A basic TIC TAC TOE game.
           </p>
         </div>
@@ -317,7 +339,7 @@
       <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
         <div class="px-6 py-4">
           <div class="font-semibold text-xl mb-2">Coin Toss</div>
-          <p class="text-gray-700 text-base">
+          <p class="text-gray-700 text-base section-text">
             Coin Toss where the coin revolving animation is there.
           </p>
         </div>
@@ -328,11 +350,11 @@
   
   <!-- Research Experience Section -->
   <div id="research-experience" class="w-full py-8 px-4">
-    <h2 class="font-semibold text-2xl mb-4">Research Experience</h2>
+    <h2 class="section-heading">Research Experience</h2>
     <div class="mb-6">
-      <h3 class="font-bold text-lg">Attention Mechanism Based Novel Multi-Branched Approach for BiLSTM Model</h3>
-      <p class="text-sm font-medium mb-2">Jun 2024 – Present</p>
-      <ul class="list-disc list-inside space-y-2">
+      <h3 class="font-bold text-lg section-heading" style="font-size:1.75rem;">Attention Mechanism Based Novel Multi-Branched Approach for BiLSTM Model</h3>
+      <p class="text-sm font-medium section-text mb-2">Jun 2024 – Present</p>
+      <ul class="list-disc list-inside section-list space-y-2">
         <li>Developed a novel BiLSTM model with a multi-branch architecture, enhancing accuracy by 3% over recent state-of-the-art methods in multiple applications, in collaboration with professor <a href="https://www.juit.ac.in/faculty.php?id=169&dep=ece&page=1" target="_blank" class="text-blue-600 underline">Dr. Pardeep Garg</a>.</li>
         <li>Currently authoring a paper on this approach for submission to IEEE Transactions on Neural Networks and Learning Systems (Impact Factor of 10.2).</li>
       </ul>
@@ -341,10 +363,10 @@
   
   <!-- Achievements Section -->
   <div id="achievements" class="w-full bg-gray-100 h-auto text-center py-12 px-6">
-    <h2 class="font-semibold text-xl">ACHIEVEMENTS</h2>
+    <h2 class="section-heading">ACHIEVEMENTS</h2>
     <div class="md:w-1/2 md:mx-auto">
-      <p class="m-2">Some of my notable achievements:</p>
-      <ul class="list-disc text-left py-8">
+      <p class="section-text m-2">Some of my notable achievements:</p>
+      <ul class="list-disc text-left section-list py-8">
         <li class="py-2">
           <strong>Clear Vision Challenge</strong> - Oct 2024
           <ul class="ml-6 list-disc">
@@ -401,8 +423,8 @@
   
   <!-- Experience (Volunteer) Section -->
   <div id="experience" class="w-full bg-gray-100 py-12 px-4 text-center">
-    <h2 class="font-semibold text-2xl mb-4">EXPERIENCE</h2>
-    <p class="text-lg mb-8">Where I have volunteered in my College:</p>
+    <h2 class="section-heading">EXPERIENCE</h2>
+    <p class="section-text text-lg mb-8">Where I have volunteered in my College:</p>
     <div class="md:w-3/4 lg:w-1/2 mx-auto space-y-8">
       <!-- Experience Item -->
       <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
@@ -412,7 +434,7 @@
         </div>
         <div class="text-sm text-left md:text-right mt-2 md:mt-0">
           <span class="block font-semibold">Sep 2022 - PRESENT</span>
-          <p>Overseeing educational initiatives for 24 underprivileged students and organizing workshops.</p>
+          <p class="section-text">Overseeing educational initiatives for 24 underprivileged students and organizing workshops.</p>
         </div>
       </div>
       <!-- Experience Item -->
@@ -423,7 +445,7 @@
         </div>
         <div class="text-sm text-left md:text-right mt-2 md:mt-0">
           <span class="block font-semibold">Mar 2023 - PRESENT</span>
-          <p>Coordinating technical events to enhance engagement within the tech community.</p>
+          <p class="section-text">Coordinating technical events to enhance engagement within the tech community.</p>
         </div>
       </div>
       <!-- Experience Item -->
@@ -434,7 +456,7 @@
         </div>
         <div class="text-sm text-left md:text-right mt-2 md:mt-0">
           <span class="block font-semibold">Sep 2022 - PRESENT</span>
-          <p>Showcasing cultural heritage through performances.</p>
+          <p class="section-text">Showcasing cultural heritage through performances.</p>
         </div>
       </div>
       <!-- Experience Item -->
@@ -445,7 +467,7 @@
         </div>
         <div class="text-sm text-left md:text-right mt-2 md:mt-0">
           <span class="block font-semibold">Jun 2023 - Oct 2024</span>
-          <p>Guided students in navigating NEP 2020 initiatives.</p>
+          <p class="section-text">Guided students in navigating NEP 2020 initiatives.</p>
         </div>
       </div>
     </div>
@@ -453,9 +475,9 @@
   
   <!-- Tech Section -->
   <div id="tech" class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
-    <h2 class="font-semibold text-xl">TECH</h2>
+    <h2 class="section-heading">TECH</h2>
     <div class="md:w-1/2 md:mx-auto">
-      <p class="m-2">Technologies / Tools I like working with.</p>
+      <p class="section-text m-2">Technologies / Tools I like working with.</p>
       <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Deep Learning</span>
       <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Python</span>
       <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Machine Learning</span>
@@ -469,9 +491,9 @@
   
   <!-- Education Section -->
   <div id="education" class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
-    <h2 class="font-semibold text-xl">EDUCATION</h2>
+    <h2 class="section-heading">EDUCATION</h2>
     <div class="md:w-1/2 md:mx-auto">
-      <p class="m-2">MY Education</p>
+      <p class="section-text m-2">MY Education</p>
       <div class="text-left py-8 flex content-between border-b border-gray-400">
         <div class="w-full">
           <span class="block font-bold">B.Tech. in Computer Science & Engineering</span>
@@ -491,7 +513,7 @@
         <div class="w-1/2 text-center">
           <span class="text-sm">2020 - 2022</span>
           <br>
-          <span class="text-sm">Percentage: 82.80 </span>
+          <span class="text-sm">Percentage: 82.80</span>
         </div>
       </div>
       <div class="text-left py-8 flex content-between border-b border-gray-400">
@@ -509,8 +531,8 @@
   </div>
   
   <!-- Certifications Section -->
-  <div id="certifications" class="w-full bg-gray-100 h-auto text-center py-12 px-6">
-    <h2 class="font-semibold text-xl">CERTIFICATIONS</h2>
+  <div id="certifications" class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
+    <h2 class="section-heading">CERTIFICATIONS</h2>
     <div class="md:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
       <!-- Certification 1 -->
       <div class="certification-card bg-white shadow-2xl rounded p-4">
