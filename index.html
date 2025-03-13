@@ -35,13 +35,12 @@
     #back-to-top:hover {
       transform: scale(1.1);
     }
-    /* Extend section animation to keep a continuous, noticeable pulse */
+    /* Continuous pulse animation on sections */
     section {
       position: relative;
       scroll-margin-top: 10px;
       padding-top: 60px;
       margin-top: -60px;
-      /* Start fully visible after fade-in */
       opacity: 1;
       animation: pulse 8s infinite alternate;
     }
@@ -158,171 +157,169 @@
   <!-- Projects Section -->
   <div id="projects" class="w-full h-auto bg-gray-100 text-center p-4 pb-12">
     <h2 class="font-semibold text-xl py-4">PROJECTS</h2>
-    <div class="flex flex-wrap justify-center">
-      <!-- Visible Projects (First 4) -->
-      <div id="visible-projects" class="flex flex-wrap justify-center">
-        <!-- JUIT Chatbot -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">
-              <a href="https://huggingface.co/spaces/adiee-raman-team/JUIT_AI_Assist" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                JUIT Chatbot
-              </a>
-              <img src="chatbot.png" alt="JUIT Chatbot" />
-            </div>
-            <p class="text-gray-700 text-base">
-              1) Built a conversational AI chatbot for JUIT, using Hugging Face API and Flask backend. The bot leverages a
-              dataset of 534 training intents and spaCy to craft context-aware responses.<br>
-              2) Optimized the training pipeline for low-resource systems, achieving an overall accuracy of 94%.<br><br>
-              Tech used: spaCy, Flask, Hugging Face API, NLP.
-            </p>
-            <div class="font-semibold text-xl mb-2">
-              <br>
-              <a href="https://juit-ai-assistant.vercel.app" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Try it Yourself
-              </a>
-            </div>
+    <!-- Changed container to grid for 4 projects per row on medium screens -->
+    <div id="visible-projects" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <!-- JUIT Chatbot -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">
+            <a href="https://huggingface.co/spaces/adiee-raman-team/JUIT_AI_Assist" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              JUIT Chatbot
+            </a>
+            <img src="chatbot.png" alt="JUIT Chatbot" />
           </div>
-        </div>
-        <!-- Image Dehazing -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">
-              <a href="https://github.com/Fairtexas5/Image_Dehazing-using-Multi-Attention-FFAnet" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Image Dehazing
-              </a>
-              <img src="imagedehazing.png" alt="Image Dehazing" />
-            </div>
-            <p class="text-gray-700 text-base">
-              1) Achieved 72% accuracy in image dehazing using a single FFA-Net model.<br>
-              2) Designed a 3D attention mechanism to enhance feature extraction, significantly improving visibility restoration.<br><br>
-              Tech used: Python, React.js, Flask, OpenCV, PIL, Pytorch, Keras.
-            </p>
-            <div class="font-semibold text-xl mb-2">
-              <br>
-              <a href="https://github.com/Fairtexas5/Image_Dehazing-using-Multi-Attention-FFAnet/blob/main/results/sample.gif" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Check
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Churn Prediction -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">
-              <a href="https://github.com/RamandeepSinghMakkar/Churn-Analysis-Prediction-Tableau-ML" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Churn Prediction
-              </a>
-              <img src="churn.png" alt="Churn Prediction" />
-            </div>
-            <p class="text-gray-700 text-base">
-              1) Customer churn is a critical issue for businesses, and analyzing churn patterns helps in developing retention strategies. This project consists of two key parts:
-              1) Churn Analysis<br>
-              2) Churn Prediction<br><br>
-              Tech used: Tableau, Logistic Regression, Random Forest, KNN.
-            </p>
-            <div class="font-semibold text-xl mb-2">
-              <br>
-              <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnAnalysis_17410739474400/ChurnAnalysis" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Churn Analysis
-              </a>
-              <br>
-              <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnPredictionAnalysis_17410735985500/PREDICTIVEANALYTICS" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Churn Prediction
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Movie Recommendation System -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">
-              <a href="https://github.com/RamandeepSinghMakkar/Movie-Recommendation" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Movie Recommendation System
-              </a>
-              <img src="movie.png" alt="Movie Recommendation System" />
-            </div>
-            <p class="text-gray-700 text-base">
-              1) Developed a movie recommendation system utilizing collaborative and content-based filtering methods; integrated real-time data via Web API, resulting in an impressive precision rate of 0.88 while personalizing user interactions with tailored content.<br>
-              2) Designed a modular data pipeline for preprocessing and vectorizing movie data with CountVectorizer and cosine similarity, resulting in improved recommendation accuracy and efficiency.<br><br>
-              Tech used: MYSQL, NLP, webAPI.
-            </p>
+          <p class="text-gray-700 text-base">
+            1) Built a conversational AI chatbot for JUIT, using Hugging Face API and Flask backend. The bot leverages a
+            dataset of 534 training intents and spaCy to craft context-aware responses.<br>
+            2) Optimized the training pipeline for low-resource systems, achieving an overall accuracy of 94%.<br><br>
+            Tech used: spaCy, Flask, Hugging Face API, NLP.
+          </p>
+          <div class="font-semibold text-xl mb-2">
+            <br>
+            <a href="https://juit-ai-assistant.vercel.app" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Try it Yourself
+            </a>
           </div>
         </div>
       </div>
-      <!-- Hidden Projects (Remaining Cards) -->
-      <div id="more-projects" class="flex flex-wrap justify-center" style="display: none;">
-        <!-- Personal Webpage -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">
-              <a href="https://github.com/RamandeepSinghMakkar/PersonalWebpage" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Personal Webpage
-              </a>
-              <img src="portfolio.png" alt="Personal Webpage" />
-            </div>
-            <p class="text-gray-700 text-base">
-              My own responsive personal webpage showing my skills, projects, education and GitHub and LinkedIn links on
-              <a href="https://ramandeepsinghmakkar-portfolio.netlify.app" class="hover:underline">Netlify</a>.<br><br>
-              Tech used: Netlify, HTML, CSS, JavaScript.
-            </p>
+      <!-- Image Dehazing -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded project-card">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">
+            <a href="https://github.com/Fairtexas5/Image_Dehazing-using-Multi-Attention-FFAnet" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Image Dehazing
+            </a>
+            <img src="imagedehazing.png" alt="Image Dehazing" />
+          </div>
+          <p class="text-gray-700 text-base">
+            1) Achieved 72% accuracy in image dehazing using a single FFA-Net model.<br>
+            2) Designed a 3D attention mechanism to enhance feature extraction, significantly improving visibility restoration.<br><br>
+            Tech used: Python, React.js, Flask, OpenCV, PIL, Pytorch, Keras.
+          </p>
+          <div class="font-semibold text-xl mb-2">
+            <br>
+            <a href="https://github.com/Fairtexas5/Image_Dehazing-using-Multi-Attention-FFAnet/blob/main/results/sample.gif" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Check
+            </a>
           </div>
         </div>
-        <!-- Fake News Classifier -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">
-              <a href="https://github.com/RamandeepSinghMakkar/FakeNewsClassifier" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                Fake News Classifier
-              </a>
-            </div>
-            <p class="text-gray-700 text-base">
-              1) Built a fully connected PyTorch-based neural network achieving 91% accuracy, leveraging a custom TF-IDF vectorizer trained on preprocessed text data to extract meaningful features.<br>
-              2) Designed and deployed an interactive Flask-based web application integrated with MySQL, enabling efficient storage of predictions, user feedback, and queries.<br><br>
-              Tech used: Flask, MYSQL, NLP, Pytorch.
-            </p>
+      </div>
+      <!-- Churn Prediction -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded project-card">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">
+            <a href="https://github.com/RamandeepSinghMakkar/Churn-Analysis-Prediction-Tableau-ML" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Churn Prediction
+            </a>
+            <img src="churn.png" alt="Churn Prediction" />
+          </div>
+          <p class="text-gray-700 text-base">
+            1) Customer churn is a critical issue for businesses, and analyzing churn patterns helps in developing retention strategies. This project consists of two key parts:
+            1) Churn Analysis<br>
+            2) Churn Prediction<br><br>
+            Tech used: Tableau, Logistic Regression, Random Forest, KNN.
+          </p>
+          <div class="font-semibold text-xl mb-2">
+            <br>
+            <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnAnalysis_17410739474400/ChurnAnalysis" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Churn Analysis
+            </a>
+            <br>
+            <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnPredictionAnalysis_17410735985500/PREDICTIVEANALYTICS" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Churn Prediction
+            </a>
           </div>
         </div>
-        <!-- IPL Score Prediction -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">
-              <a href="https://github.com/RamandeepSinghMakkar/IPL-Score-Prediction" class="hover:underline" target="_blank" rel="noopener noreferrer">
-                IPL Score Prediction
-              </a>
-            </div>
-            <p class="text-gray-700 text-base">
-              Batting team, bowling team, overs, wickets fell, etc have to be input to get the final predicted score at any time of the game to predict score.<br><br>
-              Tech used: Decision Trees, Linear Regression, Random Forest, Lasso Regression, Support Vector Machine, Neural Networks.
-            </p>
+      </div>
+      <!-- Movie Recommendation System -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">
+            <a href="https://github.com/RamandeepSinghMakkar/Movie-Recommendation" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Movie Recommendation System
+            </a>
+            <img src="movie.png" alt="Movie Recommendation System" />
           </div>
+          <p class="text-gray-700 text-base">
+            1) Developed a movie recommendation system utilizing collaborative and content-based filtering methods; integrated real-time data via Web API, resulting in an impressive precision rate of 0.88 while personalizing user interactions with tailored content.<br>
+            2) Designed a modular data pipeline for preprocessing and vectorizing movie data with CountVectorizer and cosine similarity, resulting in improved recommendation accuracy and efficiency.<br><br>
+            Tech used: MYSQL, NLP, webAPI.
+          </p>
         </div>
-        <!-- Stopwatch -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">Stopwatch</div>
-            <p class="text-gray-700 text-base">
-              A basic stopwatch made using HTML, CSS, and JavaScript.
-            </p>
+      </div>
+    </div>
+    <!-- Hidden Projects (Remaining Cards) -->
+    <div id="more-projects" class="flex flex-wrap justify-center" style="display: none;">
+      <!-- Personal Webpage -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">
+            <a href="https://github.com/RamandeepSinghMakkar/PersonalWebpage" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Personal Webpage
+            </a>
+            <img src="portfolio.png" alt="Personal Webpage" />
           </div>
+          <p class="text-gray-700 text-base">
+            My own responsive personal webpage showing my skills, projects, education and GitHub and LinkedIn links on
+            <a href="https://ramandeepsinghmakkar-portfolio.netlify.app" class="hover:underline">Netlify</a>.<br><br>
+            Tech used: Netlify, HTML, CSS, JavaScript.
+          </p>
         </div>
-        <!-- TIC TAC TOE GAME -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">TIC TAC TOE GAME</div>
-            <p class="text-gray-700 text-base">
-              A basic TIC TAC TOE game.
-            </p>
+      </div>
+      <!-- Fake News Classifier -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">
+            <a href="https://github.com/RamandeepSinghMakkar/FakeNewsClassifier" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              Fake News Classifier
+            </a>
           </div>
+          <p class="text-gray-700 text-base">
+            1) Built a fully connected PyTorch-based neural network achieving 91% accuracy, leveraging a custom TF-IDF vectorizer trained on preprocessed text data to extract meaningful features.<br>
+            2) Designed and deployed an interactive Flask-based web application integrated with MySQL, enabling efficient storage of predictions, user feedback, and queries.<br><br>
+            Tech used: Flask, MYSQL, NLP, Pytorch.
+          </p>
         </div>
-        <!-- Coin Toss -->
-        <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
-          <div class="px-6 py-4">
-            <div class="font-semibold text-xl mb-2">Coin Toss</div>
-            <p class="text-gray-700 text-base">
-              Coin Toss where the coin revolving animation is there.
-            </p>
+      </div>
+      <!-- IPL Score Prediction -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">
+            <a href="https://github.com/RamandeepSinghMakkar/IPL-Score-Prediction" class="hover:underline" target="_blank" rel="noopener noreferrer">
+              IPL Score Prediction
+            </a>
           </div>
+          <p class="text-gray-700 text-base">
+            Batting team, bowling team, overs, wickets fell, etc have to be input to get the final predicted score at any time of the game to predict score.<br><br>
+            Tech used: Decision Trees, Linear Regression, Random Forest, Lasso Regression, Support Vector Machine, Neural Networks.
+          </p>
+        </div>
+      </div>
+      <!-- Stopwatch -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">Stopwatch</div>
+          <p class="text-gray-700 text-base">
+            A basic stopwatch made using HTML, CSS, and JavaScript.
+          </p>
+        </div>
+      </div>
+      <!-- TIC TAC TOE GAME -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">TIC TAC TOE GAME</div>
+          <p class="text-gray-700 text-base">
+            A basic TIC TAC TOE game.
+          </p>
+        </div>
+      </div>
+      <!-- Coin Toss -->
+      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
+        <div class="px-6 py-4">
+          <div class="font-semibold text-xl mb-2">Coin Toss</div>
+          <p class="text-gray-700 text-base">
+            Coin Toss where the coin revolving animation is there.
+          </p>
         </div>
       </div>
     </div>
