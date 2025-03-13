@@ -8,8 +8,9 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous" />
+  <!-- Additional inline styles for dynamic effects -->
   <style>
-    /* Additional inline style for particles background and back-to-top button */
+    /* Back-to-top button & Particles container */
     #particles-js {
       position: fixed;
       width: 100%;
@@ -34,6 +35,33 @@
     #back-to-top:hover {
       transform: scale(1.1);
     }
+    /* Extend section animation to keep a continuous, noticeable pulse */
+    section {
+      position: relative;
+      scroll-margin-top: 10px;
+      padding-top: 60px;
+      margin-top: -60px;
+      /* Start fully visible after fade-in */
+      opacity: 1;
+      animation: pulse 8s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+    /* Add separation between major sections */
+    #about-me,
+    #professional-experience,
+    #projects,
+    #research-experience,
+    #achievements,
+    #experience,
+    #tech,
+    #education,
+    #certifications {
+      margin-bottom: 40px;
+    }
   </style>
 </head>
 <body class="bg-gray-100">
@@ -44,7 +72,7 @@
   <div id="back-to-top" onclick="scrollToTop()">
     <i class="fas fa-arrow-up"></i>
   </div>
-
+  
   <!-- Header Section with Navbar -->
   <header id="welcome-section">
     <nav id="navbar" class="sticky top-0 flex flex-col md:flex-row items-center bg-transparent p-4 justify-between">
@@ -511,7 +539,7 @@
   </div>
   
   <footer class="w-full bg-gray-800 text-white text-center py-4">
-    <p>&copy; 2024 Ramandeep Singh Makkar. All rights reserved.</p>
+    <p>&copy; 2024 Ramandeep Singh Makkar</p>
     <div class="flex justify-center gap-4 mt-2">
       <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400">
         <i class="fab fa-github"></i>
