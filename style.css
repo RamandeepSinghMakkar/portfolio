@@ -212,7 +212,7 @@ h2 {
 /*========================================
   Container for Education & Experience
 ========================================*/
-/* Force the inner container in Education and Experience to have consistent spacing */
+/* Ensure the inner containers in Education and Experience have consistent spacing */
 #education > .education-box,
 #experience > div {
   width: 90%;
@@ -486,22 +486,16 @@ span.inline-block:focus {
   }
 }
 
-/*========================================
-  Additional Improvements
-========================================*/
-/* Footer icon hover effect */
 footer a:hover,
 footer a:focus {
   transform: translateY(-3px);
   transition: transform 0.3s ease;
 }
 
-/* View More button hover transition */
 #view-projects {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Smooth transition for certification cards */
 .certification-card:hover,
 .certification-card:focus {
   transform: translateY(-5px);
@@ -518,7 +512,23 @@ footer a:focus {
   border-radius: 5px;
 }
 
-/* Back-to-top button & Particles container */
+/*========================================
+  Text Block Adjustments for Sections
+========================================*/
+/* Increase the width of text blocks in Achievements, Experience, Education, and Tech */
+#achievements .section-text,
+#achievements .section-list,
+#experience .section-text,
+#experience .section-list,
+#education .section-text,
+#education .section-list,
+#tech .section-text,
+#tech .section-list {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
 #particles-js {
   position: fixed;
   width: 100%;
@@ -547,7 +557,6 @@ footer a:focus {
   outline: none;
 }
 
-/* Skip Navigation Link Styling */
 .skip-nav {
   position: absolute;
   top: -40px;
