@@ -165,9 +165,38 @@ h2 {
   font-size: 28px;
   margin-bottom: 20px;
   text-align: center;
-  /* Fade in with subtle neon color shifting and glowing text */
-  animation: fadeInUp 1.2s ease-in-out, colorShift 5s infinite;
   text-shadow: 0 0 8px var(--primary-color), 0 0 12px var(--primary-alt);
+}
+
+/* Decorative styling for section headings with animation */
+.section-heading.decorative {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+.section-heading.decorative:hover {
+  transform: scale(1.05);
+}
+.section-heading.decorative::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 6px;
+  background: var(--primary-color);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+  animation: underlineExpand 1s forwards;
+}
+
+/* Keyframes for decorative underline animation */
+@keyframes underlineExpand {
+  to {
+    width: 70px;
+  }
 }
 
 /*========================================
@@ -194,7 +223,6 @@ h2 {
   border: 4px solid var(--primary-color);
   margin-right: 30px;
   transition: transform 0.3s ease;
-  /* Continuous floating animation with an extra drop-shadow glow */
   animation: float 3s ease-in-out infinite;
   box-shadow: 0 0 8px var(--primary-color);
 }
@@ -283,7 +311,9 @@ span.inline-block:focus {
   color: var(--bg-dark);
 }
 
-/* Text Helpers */
+/*========================================
+  Text Helpers
+========================================*/
 .text-left {
   color: var(--secondary-color);
   font-size: 16px;
@@ -500,58 +530,8 @@ footer a:focus {
 /*========================================
   Certificate Images Adjustments
 ========================================*/
-/* Adjust certificate images to tone down their brightness */
 .certification-card img {
   filter: brightness(0.7) contrast(1.2);
   border: 2px solid var(--bg-darker);
   border-radius: 5px;
-}
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  transition: transform 0.2s ease-out;
-}
-#back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--primary-color);
-  color: var(--bg-dark);
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 0 8px var(--primary-color);
-  transition: transform 0.3s ease;
-  z-index: 100;
-}
-#back-to-top:hover,
-#back-to-top:focus {
-  transform: scale(1.1);
-  outline: none;
-}
-/* Continuous pulse animation on sections */
-section {
-  position: relative;
-  scroll-margin-top: 10px;
-  padding-top: 60px;
-  margin-top: -60px;
-  opacity: 0;
-}
-/* Skip Navigation Link Styling */
-.skip-nav {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-color);
-  color: var(--bg-dark);
-  padding: 8px 16px;
-  z-index: 1000;
-  transition: top 0.3s;
-}
-.skip-nav:focus {
-  top: 0;
 }

@@ -14,8 +14,58 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous" />
-  <!-- Additional inline styles for dynamic effects and enhanced text styling -->
-  
+  <style>
+    /* Back-to-top button & Particles container */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      transition: transform 0.2s ease-out;
+    }
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 8px var(--primary-color);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+    #back-to-top:hover,
+    #back-to-top:focus {
+      transform: scale(1.1);
+      outline: none;
+    }
+    /* Continuous pulse animation on sections */
+    section {
+      position: relative;
+      scroll-margin-top: 10px;
+      padding-top: 60px;
+      margin-top: -60px;
+      opacity: 0;
+    }
+    /* Skip Navigation Link Styling */
+    .skip-nav {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 8px 16px;
+      z-index: 1000;
+      transition: top 0.3s;
+    }
+    .skip-nav:focus {
+      top: 0;
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
   <!-- Skip to Content Link for Accessibility -->
@@ -45,7 +95,6 @@
         </button>
       </div>
       <!-- Navigation Links -->
-      <!-- On mobile: hidden by default; on md+: visible -->
       <div id="nav-links" class="w-full md:w-auto flex flex-col md:flex-row items-center md:space-x-4 mt-4 md:mt-0 hidden md:flex">
         <a href="#about-me" class="block text-white hover:text-gray-300 mr-4 menu-link">About Me</a>
         <a href="#professional-experience" class="block text-white hover:text-gray-300 mr-4 menu-link">Professional Experience</a>
@@ -93,8 +142,8 @@
     
     <!-- Professional Experience Section -->
     <section id="professional-experience">
-      <div class="w-full bg-gray-100 h-auto text-center py-12 px-6">
-        <h2 class="section-heading">PROFESSIONAL EXPERIENCE</h2>
+      <div class="w-full bg-gray-100 h-auto text-center py-12 px-6 differentiator prof-exp">
+        <h2 class="section-heading decorative">PROFESSIONAL EXPERIENCE</h2>
         <div class="md:w-3/4 md:mx-auto">
           <p class="section-text">Here is an overview of my professional experience:</p>
           <ul class="list-disc text-left section-list py-8">
@@ -122,7 +171,6 @@
     <section id="projects">
       <div class="w-full h-auto bg-gray-100 text-center p-4 pb-12">
         <h2 class="section-heading">PROJECTS</h2>
-        <!-- Grid for 4 projects per row on medium screens -->
         <div id="visible-projects" class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <!-- JUIT Chatbot -->
           <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded">
@@ -294,8 +342,8 @@
     
     <!-- Research Experience Section -->
     <section id="research-experience">
-      <div class="w-full py-8 px-4">
-        <h2 class="section-heading">Research Experience</h2>
+      <div class="w-full py-8 px-4 differentiator research-exp">
+        <h2 class="section-heading decorative">Research Experience</h2>
         <div class="mb-6">
           <h3 class="font-bold text-lg section-heading" style="font-size:1.75rem;">Attention Mechanism Based Novel Multi-Branched Approach for BiLSTM Model</h3>
           <p class="text-sm font-medium section-text mb-2">Jun 2024 – Present</p>
@@ -309,8 +357,8 @@
     
     <!-- Achievements Section -->
     <section id="achievements">
-      <div class="w-full bg-gray-100 h-auto text-center py-12 px-6">
-        <h2 class="section-heading">ACHIEVEMENTS</h2>
+      <div class="w-full bg-gray-100 h-auto text-center differentiator achievements-exp">
+        <h2 class="section-heading decorative">ACHIEVEMENTS</h2>
         <div class="md:w-1/2 md:mx-auto">
           <p class="section-text m-2">Some of my notable achievements:</p>
           <ul class="list-disc text-left section-list py-8">
@@ -375,7 +423,6 @@
         <h2 class="section-heading">EXPERIENCE</h2>
         <p class="section-text text-lg mb-8">Where I have volunteered in my College:</p>
         <div class="md:w-3/4 lg:w-1/2 mx-auto space-y-8">
-          <!-- Experience Item -->
           <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
             <div>
               <h3 class="font-bold text-lg">JYC</h3>
@@ -386,7 +433,6 @@
               <p class="section-text">Overseeing educational initiatives for 24 underprivileged students and organizing workshops.</p>
             </div>
           </div>
-          <!-- Experience Item -->
           <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
             <div>
               <h3 class="font-bold text-lg">SIAM JUIT</h3>
@@ -397,7 +443,6 @@
               <p class="section-text">Coordinating technical events to enhance engagement within the tech community.</p>
             </div>
           </div>
-          <!-- Experience Item -->
           <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
             <div>
               <h3 class="font-bold text-lg">UBC [United Bhangra Crew]</h3>
@@ -408,7 +453,6 @@
               <p class="section-text">Showcasing cultural heritage through performances.</p>
             </div>
           </div>
-          <!-- Experience Item -->
           <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
             <div>
               <h3 class="font-bold text-lg">University Grants Commission (UGC)</h3>
@@ -562,10 +606,10 @@
       const button = document.getElementById("view-projects");
       
       if (moreProjects.style.display === "none" || moreProjects.style.display === "") {
-        moreProjects.style.display = "flex"; // show extra projects
+        moreProjects.style.display = "flex";
         button.textContent = "VIEW LESS";
       } else {
-        moreProjects.style.display = "none"; // hide extra projects
+        moreProjects.style.display = "none";
         button.textContent = "VIEW MORE";
       }
     }
