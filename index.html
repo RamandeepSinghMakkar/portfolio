@@ -4,93 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Ramandeep Singh's Website" />
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Ramandeep Singh Makkar Portfolio" />
+  <meta property="og:description" content="Data Scientist portfolio with projects, professional experience, and certifications." />
+  <meta property="og:image" content="myphoto.png" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
   <title>Ramandeep Singh Makkar</title>
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous" />
   <!-- Additional inline styles for dynamic effects and enhanced text styling -->
-  <style>
-    /* Back-to-top button & Particles container */
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -2;
-    }
-    #back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--primary-color);
-      color: var(--bg-dark);
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 0 8px var(--primary-color);
-      transition: transform 0.3s ease;
-      z-index: 100;
-    }
-    #back-to-top:hover {
-      transform: scale(1.1);
-    }
-    /* Continuous pulse animation on sections */
-    section {
-      position: relative;
-      scroll-margin-top: 10px;
-      padding-top: 60px;
-      margin-top: -60px;
-      opacity: 1;
-      animation: pulse 8s infinite alternate;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
-    }
-    /* Add separation between major sections */
-    #about-me,
-    #professional-experience,
-    #projects,
-    #research-experience,
-    #achievements,
-    #experience,
-    #tech,
-    #education,
-    #certifications {
-      margin-bottom: 40px;
-    }
-    /* Enhanced text styling for dynamic, eye-catching content */
-    .section-heading {
-      font-size: 2.25rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--primary-color);
-      text-shadow: 0 0 8px var(--primary-color), 0 0 12px var(--primary-alt);
-      margin-bottom: 1rem;
-    }
-    .section-text {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      color: var(--secondary-color);
-      text-shadow: 0 0 4px rgba(0,212,255,0.5);
-      margin-bottom: 1rem;
-    }
-    .section-list li {
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
-      color: var(--secondary-color);
-      text-shadow: 0 0 4px rgba(0,212,255,0.3);
-    }
-  </style>
+  
 </head>
 <body class="bg-gray-100">
+  <!-- Skip to Content Link for Accessibility -->
+  <a href="#main" class="skip-nav">Skip to Content</a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"><i class="fas fa-sync fa-spin"></i></div>
+  </div>
+  
   <!-- Particle Background -->
   <div id="particles-js"></div>
   
   <!-- Back to Top Button -->
-  <div id="back-to-top" onclick="scrollToTop()">
+  <div id="back-to-top" onclick="scrollToTop()" tabindex="0" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </div>
   
@@ -100,7 +40,7 @@
       <!-- Mobile: Branding & Hamburger -->
       <div class="w-full flex justify-between md:hidden">
         <div class="text-white text-xl font-bold">Contents</div>
-        <button id="hamburger" class="text-white focus:outline-none">
+        <button id="hamburger" class="text-white focus:outline-none" aria-label="Menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -116,495 +56,521 @@
         <a href="#tech" class="block text-white hover:text-gray-300 mr-4 menu-link">Technical Skills</a>
         <a href="#education" class="block text-white hover:text-gray-300 mr-4 menu-link">Education</a>
         <a href="#certifications" class="block text-white hover:text-gray-300 menu-link">Certifications</a>
-        <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400" target="_blank">
+        <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/ramandeep-singh-makkar" class="hover:text-gray-400" target="_blank">
+        <a href="https://www.linkedin.com/in/ramandeep-singh-makkar" class="hover:text-gray-400" target="_blank" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
     </nav>
   </header>
   
-  <!-- Upper Half Section (Profile + Introduction) -->
-  <section>
-    <div id="about-me" class="w-full bg-gray-100 h-auto text-center py-12 px-6">
-      <div class="portfolio-container">
-        <!-- Profile Picture -->
-        <div class="profile-section">
-          <img src="myphoto.png" alt="My Photo" class="profile-pic">
-        </div>
-        <!-- Introduction Text -->
-        <div class="intro-section">
-          <h1 class="section-heading">Hello, I'm Ramandeep Singh</h1>
-          <p class="section-text">
-            I am a Data Scientist with expertise in Deep Learning and Machine Learning.
-          </p>
-          <!-- Resume Button -->
-          <a href="https://drive.google.com/file/d/14EoJ5_MSqNWND9Z5IQ76ydwjlOHCB3SY/view?usp=share_link" target="_blank" rel="noopener noreferrer">
-            <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-blue-600">
-              Download Resume
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Professional Experience Section -->
-  <div id="professional-experience" class="w-full bg-gray-100 h-auto text-center py-12 px-6">
-    <h2 class="section-heading">PROFESSIONAL EXPERIENCE</h2>
-    <div class="md:w-3/4 md:mx-auto">
-      <p class="section-text">Here is an overview of my professional experience:</p>
-      <ul class="list-disc text-left section-list py-8">
-        <li class="py-2">
-          <div class="experience-item">
-            <div class="title-and-date">
-              <span class="title"><strong>Data Scientist Intern</strong> – Parabox -Remote</span>
-              <span class="date">(Oct 2024 - Dec 2024)</span>
-            </div>
-            <p class="description section-text">
-              Engineered a hybrid ensemble model that integrates a finely tuned XGBoost and CNN, leveraging a weighted
-              probability averaging technique to boost predictive performance and achieve an accuracy of 97%.<br>
-              Implemented advanced image pre-processing methods, including median blur and Total Variation (TV)
-              Denoising via OpenCV, to enhance image quality and reduce noise in medical imaging data.<br>
-              Facilitated cross-functional collaboration between technical and medical teams through bi-weekly meetings.
+  <!-- Main Content -->
+  <main id="main">
+    <!-- Upper Half Section (Profile + Introduction) -->
+    <section id="about-me">
+      <div class="w-full bg-gray-100 h-auto text-center py-12 px-6">
+        <div class="portfolio-container">
+          <!-- Profile Picture -->
+          <div class="profile-section">
+            <img src="myphoto.png" alt="My Photo" class="profile-pic" loading="lazy">
+          </div>
+          <!-- Introduction Text -->
+          <div class="intro-section">
+            <h1 class="section-heading">Hello, I'm Ramandeep Singh</h1>
+            <p class="section-text">
+              I am a Data Scientist with expertise in Deep Learning and Machine Learning.
             </p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  
-  <!-- Projects Section -->
-  <div id="projects" class="w-full h-auto bg-gray-100 text-center p-4 pb-12">
-    <h2 class="section-heading">PROJECTS</h2>
-    <!-- Grid for 4 projects per row on medium screens -->
-    <div id="visible-projects" class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <!-- JUIT Chatbot -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">
-            <a href="https://huggingface.co/spaces/adiee-raman-team/JUIT_AI_Assist" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              JUIT Chatbot
-            </a>
-            <img src="chatbot.png" alt="JUIT Chatbot" />
-          </div>
-          <p class="text-gray-700 text-base section-text">
-            1) Built a conversational AI chatbot for JUIT, using Hugging Face API and Flask backend. The bot leverages a
-            dataset of 534 training intents and spaCy to craft context-aware responses.<br>
-            2) Optimized the training pipeline for low-resource systems, achieving an overall accuracy of 94%.<br><br>
-            Tech used: spaCy, Flask, Hugging Face API, NLP.
-          </p>
-          <div class="font-semibold text-xl mb-2">
-            <br>
-            <a href="https://juit-ai-assistant.vercel.app" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Try it Yourself
+            <!-- Resume Button -->
+            <a href="https://drive.google.com/file/d/14EoJ5_MSqNWND9Z5IQ76ydwjlOHCB3SY/view?usp=share_link" target="_blank" rel="noopener noreferrer">
+              <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-blue-600 focus:outline-none">Download Resume</button>
             </a>
           </div>
         </div>
       </div>
-      <!-- Image Dehazing -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded project-card">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">
-            <a href="https://github.com/Fairtexas5/Image_Dehazing-using-Multi-Attention-FFAnet" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Image Dehazing
-            </a>
-            <img src="imagedehazing.png" alt="Image Dehazing" />
-          </div>
-          <p class="text-gray-700 text-base section-text">
-            1) Achieved 72% accuracy in image dehazing using a single FFA-Net model.<br>
-            2) Designed a 3D attention mechanism to enhance feature extraction, significantly improving visibility restoration.<br><br>
-            Tech used: Python, React.js, Flask, OpenCV, PIL, Pytorch, Keras.
-          </p>
-          <div class="font-semibold text-xl mb-2">
-            <br>
-            <a href="https://github.com/Fairtexas5/Image_Dehazing-using-Multi-Attention-FFAnet/blob/main/results/sample.gif" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Check
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Churn Prediction -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded project-card">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">
-            <a href="https://github.com/RamandeepSinghMakkar/Churn-Analysis-Prediction-Tableau-ML" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Churn Prediction
-            </a>
-            <img src="churn.png" alt="Churn Prediction" />
-          </div>
-          <p class="text-gray-700 text-base section-text">
-            1) Customer churn is a critical issue for businesses, and analyzing churn patterns helps in developing retention strategies. This project consists of two key parts:
-            1) Churn Analysis<br>
-            2) Churn Prediction<br><br>
-            Tech used: Tableau, Logistic Regression, Random Forest, KNN.
-          </p>
-          <div class="font-semibold text-xl mb-2">
-            <br>
-            <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnAnalysis_17410739474400/ChurnAnalysis" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Churn Analysis
-            </a>
-            <br>
-            <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnPredictionAnalysis_17410735985500/PREDICTIVEANALYTICS" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Churn Prediction
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Movie Recommendation System -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">
-            <a href="https://github.com/RamandeepSinghMakkar/Movie-Recommendation" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Movie Recommendation System
-            </a>
-            <img src="movie.png" alt="Movie Recommendation System" />
-          </div>
-          <p class="text-gray-700 text-base section-text">
-            1) Developed a movie recommendation system utilizing collaborative and content-based filtering methods; integrated real-time data via Web API, resulting in an impressive precision rate of 0.88 while personalizing user interactions with tailored content.<br>
-            2) Designed a modular data pipeline for preprocessing and vectorizing movie data with CountVectorizer and cosine similarity, resulting in improved recommendation accuracy and efficiency.<br><br>
-            Tech used: MYSQL, NLP, webAPI.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Hidden Projects (Remaining Cards) -->
-    <div id="more-projects" class="flex flex-wrap justify-center" style="display: none;">
-      <!-- Personal Webpage -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">
-            <a href="https://github.com/RamandeepSinghMakkar/PersonalWebpage" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Personal Webpage
-            </a>
-            <img src="portfolio.png" alt="Personal Webpage" />
-          </div>
-          <p class="text-gray-700 text-base section-text">
-            My own responsive personal webpage showing my skills, projects, education and GitHub and LinkedIn links on
-            <a href="https://ramandeepsinghmakkar-portfolio.netlify.app" class="hover:underline">Netlify</a>.<br><br>
-            Tech used: Netlify, HTML, CSS, JavaScript.
-          </p>
-        </div>
-      </div>
-      <!-- Fake News Classifier -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">
-            <a href="https://github.com/RamandeepSinghMakkar/FakeNewsClassifier" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              Fake News Classifier
-            </a>
-          </div>
-          <p class="text-gray-700 text-base section-text">
-            1) Built a fully connected PyTorch-based neural network achieving 91% accuracy, leveraging a custom TF-IDF vectorizer trained on preprocessed text data to extract meaningful features.<br>
-            2) Designed and deployed an interactive Flask-based web application integrated with MySQL, enabling efficient storage of predictions, user feedback, and queries.<br><br>
-            Tech used: Flask, MYSQL, NLP, Pytorch.
-          </p>
-        </div>
-      </div>
-      <!-- IPL Score Prediction -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">
-            <a href="https://github.com/RamandeepSinghMakkar/IPL-Score-Prediction" class="hover:underline" target="_blank" rel="noopener noreferrer">
-              IPL Score Prediction
-            </a>
-          </div>
-          <p class="text-gray-700 text-base section-text">
-            Batting team, bowling team, overs, wickets fell, etc have to be input to get the final predicted score at any time of the game to predict score.<br><br>
-            Tech used: Decision Trees, Linear Regression, Random Forest, Lasso Regression, Support Vector Machine, Neural Networks.
-          </p>
-        </div>
-      </div>
-      <!-- Stopwatch -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">Stopwatch</div>
-          <p class="text-gray-700 text-base section-text">
-            A basic stopwatch made using HTML, CSS, and JavaScript.
-          </p>
-        </div>
-      </div>
-      <!-- TIC TAC TOE GAME -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">TIC TAC TOE GAME</div>
-          <p class="text-gray-700 text-base section-text">
-            A basic TIC TAC TOE game.
-          </p>
-        </div>
-      </div>
-      <!-- Coin Toss -->
-      <div class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
-        <div class="px-6 py-4">
-          <div class="font-semibold text-xl mb-2">Coin Toss</div>
-          <p class="text-gray-700 text-base section-text">
-            Coin Toss where the coin revolving animation is there.
-          </p>
-        </div>
-      </div>
-    </div>
-    <button id="view-projects" class="bg-transparent hover:bg-blue-500 text-xs text-blue-700 hover:text-white py-2 px-8 my-4 border-2 border-blue-500 hover:border-transparent" onclick="toggleProjects()">VIEW MORE</button>
-  </div>
-  
-  <!-- Research Experience Section -->
-  <div id="research-experience" class="w-full py-8 px-4">
-    <h2 class="section-heading">Research Experience</h2>
-    <div class="mb-6">
-      <h3 class="font-bold text-lg section-heading" style="font-size:1.75rem;">Attention Mechanism Based Novel Multi-Branched Approach for BiLSTM Model</h3>
-      <p class="text-sm font-medium section-text mb-2">Jun 2024 – Present</p>
-      <ul class="list-disc list-inside section-list space-y-2">
-        <li>Developed a novel BiLSTM model with a multi-branch architecture, enhancing accuracy by 3% over recent state-of-the-art methods in multiple applications, in collaboration with professor <a href="https://www.juit.ac.in/faculty.php?id=169&dep=ece&page=1" target="_blank" class="text-blue-600 underline">Dr. Pardeep Garg</a>.</li>
-        <li>Currently authoring a paper on this approach for submission to IEEE Transactions on Neural Networks and Learning Systems (Impact Factor of 10.2).</li>
-      </ul>
-    </div>
-  </div>
-  
-  <!-- Achievements Section -->
-  <div id="achievements" class="w-full bg-gray-100 h-auto text-center py-12 px-6">
-    <h2 class="section-heading">ACHIEVEMENTS</h2>
-    <div class="md:w-1/2 md:mx-auto">
-      <p class="section-text m-2">Some of my notable achievements:</p>
-      <ul class="list-disc text-left section-list py-8">
-        <li class="py-2">
-          <strong>Clear Vision Challenge</strong> - Oct 2024
-          <ul class="ml-6 list-disc">
-            <li>
-              <a href="https://drive.google.com/drive/folders/11EHrawSuTTE4aCP_TgIWNXsbLcuX8rgq" target="_blank" class="text-blue-600 underline">View Certificate</a>
-            </li>
-            <li>
-              Led a team in a prestigious one-week AI event organized by the 'Centre of Excellence in Artificial Intelligence for Education.'
-            </li>
-            <li>
-              Secured 3<sup>rd</sup> place among top-tier participants, showcasing technical expertise, leadership, and creativity.
+    </section>
+    
+    <!-- Professional Experience Section -->
+    <section id="professional-experience">
+      <div class="w-full bg-gray-100 h-auto text-center py-12 px-6">
+        <h2 class="section-heading">PROFESSIONAL EXPERIENCE</h2>
+        <div class="md:w-3/4 md:mx-auto">
+          <p class="section-text">Here is an overview of my professional experience:</p>
+          <ul class="list-disc text-left section-list py-8">
+            <li class="py-2">
+              <div class="experience-item">
+                <div class="title-and-date">
+                  <span class="title"><strong>Data Scientist Intern</strong> – Parabox -Remote</span>
+                  <span class="date">(Oct 2024 - Dec 2024)</span>
+                </div>
+                <p class="description section-text">
+                  Engineered a hybrid ensemble model that integrates a finely tuned XGBoost and CNN, leveraging a weighted
+                  probability averaging technique to boost predictive performance and achieve an accuracy of 97%.<br>
+                  Implemented advanced image pre-processing methods, including median blur and Total Variation (TV)
+                  Denoising via OpenCV, to enhance image quality and reduce noise in medical imaging data.<br>
+                  Facilitated cross-functional collaboration between technical and medical teams through bi-weekly meetings.
+                </p>
+              </div>
             </li>
           </ul>
-        </li>
-        <li class="py-2">
-          <strong>AI - Boon or Bane</strong> - Mar 2024
-          <ul class="ml-6 list-disc">
-            <li>
-              <a href="https://drive.google.com/drive/folders/179DiejtP5AvAe1KdetyJ7rj1vGXgvuby?usp=sharing" target="_blank" class="text-blue-600 underline">View Certificate</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="w-full h-auto bg-gray-100 text-center p-4 pb-12">
+        <h2 class="section-heading">PROJECTS</h2>
+        <!-- Grid for 4 projects per row on medium screens -->
+        <div id="visible-projects" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- JUIT Chatbot -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">
+                <a href="https://huggingface.co/spaces/adiee-raman-team/JUIT_AI_Assist" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  JUIT Chatbot
+                </a>
+                <img src="chatbot.png" alt="JUIT Chatbot" loading="lazy">
+              </div>
+              <p class="text-gray-700 text-base section-text">
+                1) Built a conversational AI chatbot for JUIT, using Hugging Face API and Flask backend. The bot leverages a
+                dataset of 534 training intents and spaCy to craft context-aware responses.<br>
+                2) Optimized the training pipeline for low-resource systems, achieving an overall accuracy of 94%.<br><br>
+                Tech used: spaCy, Flask, Hugging Face API, NLP.
+              </p>
+              <div class="font-semibold text-xl mb-2">
+                <br>
+                <a href="https://juit-ai-assistant.vercel.app" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Try it Yourself
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Image Dehazing -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded project-card">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">
+                <a href="https://github.com/Fairtexas5/Image_Dehazing-using-Multi-Attention-FFAnet" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Image Dehazing
+                </a>
+                <img src="imagedehazing.png" alt="Image Dehazing" loading="lazy">
+              </div>
+              <p class="text-gray-700 text-base section-text">
+                1) Achieved 72% accuracy in image dehazing using a single FFA-Net model.<br>
+                2) Designed a 3D attention mechanism to enhance feature extraction, significantly improving visibility restoration.<br><br>
+                Tech used: Python, React.js, Flask, OpenCV, PIL, Pytorch, Keras.
+              </p>
+              <div class="font-semibold text-xl mb-2">
+                <br>
+                <a href="https://github.com/Fairtexas5/Image_Dehazing-using-Multi-Attention-FFAnet/blob/main/results/sample.gif" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Check
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Churn Prediction -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded project-card">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">
+                <a href="https://github.com/RamandeepSinghMakkar/Churn-Analysis-Prediction-Tableau-ML" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Churn Prediction
+                </a>
+                <img src="churn.png" alt="Churn Prediction" loading="lazy">
+              </div>
+              <p class="text-gray-700 text-base section-text">
+                1) Customer churn is a critical issue for businesses, and analyzing churn patterns helps in developing retention strategies. This project consists of two key parts:
+                1) Churn Analysis<br>
+                2) Churn Prediction<br><br>
+                Tech used: Tableau, Logistic Regression, Random Forest, KNN.
+              </p>
+              <div class="font-semibold text-xl mb-2">
+                <br>
+                <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnAnalysis_17410739474400/ChurnAnalysis" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Churn Analysis
+                </a>
+                <br>
+                <a href="https://public.tableau.com/app/profile/ramandeep.singh.makkar/viz/ChurnPredictionAnalysis_17410735985500/PREDICTIVEANALYTICS" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Churn Prediction
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Movie Recommendation System -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:mx-2 rounded">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">
+                <a href="https://github.com/RamandeepSinghMakkar/Movie-Recommendation" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Movie Recommendation System
+                </a>
+                <img src="movie.png" alt="Movie Recommendation System" loading="lazy">
+              </div>
+              <p class="text-gray-700 text-base section-text">
+                1) Developed a movie recommendation system utilizing collaborative and content-based filtering methods; integrated real-time data via Web API, resulting in an impressive precision rate of 0.88 while personalizing user interactions with tailored content.<br>
+                2) Designed a modular data pipeline for preprocessing and vectorizing movie data with CountVectorizer and cosine similarity, resulting in improved recommendation accuracy and efficiency.<br><br>
+                Tech used: MYSQL, NLP, webAPI.
+              </p>
+            </div>
+          </article>
+        </div>
+        <!-- Hidden Projects (Remaining Cards) -->
+        <div id="more-projects" class="flex flex-wrap justify-center" style="display: none;">
+          <!-- Personal Webpage -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">
+                <a href="https://github.com/RamandeepSinghMakkar/PersonalWebpage" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Personal Webpage
+                </a>
+                <img src="portfolio.png" alt="Personal Webpage" loading="lazy">
+              </div>
+              <p class="text-gray-700 text-base section-text">
+                My own responsive personal webpage showing my skills, projects, education and GitHub and LinkedIn links on
+                <a href="https://ramandeepsinghmakkar-portfolio.netlify.app" class="hover:underline">Netlify</a>.<br><br>
+                Tech used: Netlify, HTML, CSS, JavaScript.
+              </p>
+            </div>
+          </article>
+          <!-- Fake News Classifier -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">
+                <a href="https://github.com/RamandeepSinghMakkar/FakeNewsClassifier" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  Fake News Classifier
+                </a>
+              </div>
+              <p class="text-gray-700 text-base section-text">
+                1) Built a fully connected PyTorch-based neural network achieving 91% accuracy, leveraging a custom TF-IDF vectorizer trained on preprocessed text data to extract meaningful features.<br>
+                2) Designed and deployed an interactive Flask-based web application integrated with MySQL, enabling efficient storage of predictions, user feedback, and queries.<br><br>
+                Tech used: Flask, MYSQL, NLP, Pytorch.
+              </p>
+            </div>
+          </article>
+          <!-- IPL Score Prediction -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded project-card">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">
+                <a href="https://github.com/RamandeepSinghMakkar/IPL-Score-Prediction" class="hover:underline" target="_blank" rel="noopener noreferrer">
+                  IPL Score Prediction
+                </a>
+              </div>
+              <p class="text-gray-700 text-base section-text">
+                Batting team, bowling team, overs, wickets fell, etc have to be input to get the final predicted score at any time of the game to predict score.<br><br>
+                Tech used: Decision Trees, Linear Regression, Random Forest, Lasso Regression, Support Vector Machine, Neural Networks.
+              </p>
+            </div>
+          </article>
+          <!-- Stopwatch -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">Stopwatch</div>
+              <p class="text-gray-700 text-base section-text">
+                A basic stopwatch made using HTML, CSS, and JavaScript.
+              </p>
+            </div>
+          </article>
+          <!-- TIC TAC TOE GAME -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">TIC TAC TOE GAME</div>
+              <p class="text-gray-700 text-base section-text">
+                A basic TIC TAC TOE game.
+              </p>
+            </div>
+          </article>
+          <!-- Coin Toss -->
+          <article class="max-w-sm overflow-hidden shadow-2xl bg-white my-4 md:w-1/4 md:mx-2 rounded view-more">
+            <div class="px-6 py-4">
+              <div class="font-semibold text-xl mb-2">Coin Toss</div>
+              <p class="text-gray-700 text-base section-text">
+                Coin Toss where the coin revolving animation is there.
+              </p>
+            </div>
+          </article>
+        </div>
+        <button id="view-projects" class="bg-transparent hover:bg-blue-500 text-xs text-blue-700 hover:text-white py-2 px-8 my-4 border-2 border-blue-500 hover:border-transparent focus:outline-none" onclick="toggleProjects()">VIEW MORE</button>
+      </div>
+    </section>
+    
+    <!-- Research Experience Section -->
+    <section id="research-experience">
+      <div class="w-full py-8 px-4">
+        <h2 class="section-heading">Research Experience</h2>
+        <div class="mb-6">
+          <h3 class="font-bold text-lg section-heading" style="font-size:1.75rem;">Attention Mechanism Based Novel Multi-Branched Approach for BiLSTM Model</h3>
+          <p class="text-sm font-medium section-text mb-2">Jun 2024 – Present</p>
+          <ul class="list-disc list-inside section-list space-y-2">
+            <li>Developed a novel BiLSTM model with a multi-branch architecture, enhancing accuracy by 3% over recent state-of-the-art methods in multiple applications, in collaboration with professor <a href="https://www.juit.ac.in/faculty.php?id=169&dep=ece&page=1" target="_blank" class="text-blue-600 underline">Dr. Pardeep Garg</a>.</li>
+            <li>Currently authoring a paper on this approach for submission to IEEE Transactions on Neural Networks and Learning Systems (Impact Factor of 10.2).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements">
+      <div class="w-full bg-gray-100 h-auto text-center py-12 px-6">
+        <h2 class="section-heading">ACHIEVEMENTS</h2>
+        <div class="md:w-1/2 md:mx-auto">
+          <p class="section-text m-2">Some of my notable achievements:</p>
+          <ul class="list-disc text-left section-list py-8">
+            <li class="py-2">
+              <strong>Clear Vision Challenge</strong> - Oct 2024
+              <ul class="ml-6 list-disc">
+                <li>
+                  <a href="https://drive.google.com/drive/folders/11EHrawSuTTE4aCP_TgIWNXsbLcuX8rgq" target="_blank" class="text-blue-600 underline">View Certificate</a>
+                </li>
+                <li>
+                  Led a team in a prestigious one-week AI event organized by the 'Centre of Excellence in Artificial Intelligence for Education.'
+                </li>
+                <li>
+                  Secured 3<sup>rd</sup> place among top-tier participants, showcasing technical expertise, leadership, and creativity.
+                </li>
+              </ul>
             </li>
-            <li>
-              Achieved 3<sup>rd</sup> position in an on-site debate, engaging in profound discussions with 20 peers on the ethical and societal implications of AI.
+            <li class="py-2">
+              <strong>AI - Boon or Bane</strong> - Mar 2024
+              <ul class="ml-6 list-disc">
+                <li>
+                  <a href="https://drive.google.com/drive/folders/179DiejtP5AvAe1KdetyJ7rj1vGXgvuby?usp=sharing" target="_blank" class="text-blue-600 underline">View Certificate</a>
+                </li>
+                <li>
+                  Achieved 3<sup>rd</sup> position in an on-site debate, engaging in profound discussions with 20 peers on the ethical and societal implications of AI.
+                </li>
+              </ul>
+            </li>
+            <li class="py-2">
+              <strong>Innovate with NVIDIA</strong> - Nov 2023
+              <ul class="ml-6 list-disc">
+                <li>
+                  <a href="https://drive.google.com/drive/folders/1UExtoH3qEqGgt6zFADVkPRdKWJqxeYE6" target="_blank" class="text-blue-600 underline">View Certificate</a>
+                </li>
+                <li>
+                  Developed an IoT-Based Water Quality Estimator with an impressive 94.8% accuracy, leveraging Logistic Regression and Oxidation-Reduction Potential (ORP) analysis.
+                </li>
+              </ul>
+            </li>
+            <li class="py-2">
+              <strong>CGPA Felicitation</strong>
+              <ul class="ml-6 list-disc">
+                <li>
+                  <a href="https://drive.google.com/drive/u/1/folders/1ROyi2vqEqtWcrMVGjcTJQQBdEaSC1g66" target="_blank" class="text-blue-600 underline">View Certificate</a>
+                </li>
+                <li>
+                  I am honored to have been one of the top 10 students from the CSE program in my year, recognized for maintaining an exemplary 9+ CGPA. This milestone was celebrated during Freshers' Night by our esteemed Vice Chancellor, Prof. Rajendra Kumar Sharma, and Registrar, Rakesh Bassi.
+                </li>
+                <li>
+                  This acknowledgment not only underscores my dedication to academic excellence but also inspires me to pursue even greater milestones in my technical journey.
+                </li>
+              </ul>
             </li>
           </ul>
-        </li>
-        <li class="py-2">
-          <strong>Innovate with NVIDIA</strong> - Nov 2023
-          <ul class="ml-6 list-disc">
-            <li>
-              <a href="https://drive.google.com/drive/folders/1UExtoH3qEqGgt6zFADVkPRdKWJqxeYE6" target="_blank" class="text-blue-600 underline">View Certificate</a>
-            </li>
-            <li>
-              Developed an IoT-Based Water Quality Estimator with an impressive 94.8% accuracy, leveraging Logistic Regression and Oxidation-Reduction Potential (ORP) analysis.
-            </li>
-          </ul>
-        </li>
-        <li class="py-2">
-          <strong>CGPA Felicitation</strong>
-          <ul class="ml-6 list-disc">
-            <li>
-              <a href="https://drive.google.com/drive/u/1/folders/1ROyi2vqEqtWcrMVGjcTJQQBdEaSC1g66" target="_blank" class="text-blue-600 underline">View Certificate</a>
-            </li>
-            <li>
-              I am honored to have been one of the top 10 students from the CSE program in my year, recognized for maintaining an exemplary 9+ CGPA. This milestone was celebrated during Freshers' Night by our esteemed Vice Chancellor, Prof. Rajendra Kumar Sharma, and Registrar, Rakesh Bassi.
-            </li>
-            <li>
-              This acknowledgment not only underscores my dedication to academic excellence but also inspires me to pursue even greater milestones in my technical journey.
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-  
-  <!-- Experience (Volunteer) Section -->
-  <div id="experience" class="w-full bg-gray-100 py-12 px-4 text-center">
-    <h2 class="section-heading">EXPERIENCE</h2>
-    <p class="section-text text-lg mb-8">Where I have volunteered in my College:</p>
-    <div class="md:w-3/4 lg:w-1/2 mx-auto space-y-8">
-      <!-- Experience Item -->
-      <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
-        <div>
-          <h3 class="font-bold text-lg">JYC</h3>
-          <p class="text-sm font-medium mt-1">Coordinator</p>
-        </div>
-        <div class="text-sm text-left md:text-right mt-2 md:mt-0">
-          <span class="block font-semibold">Sep 2022 - PRESENT</span>
-          <p class="section-text">Overseeing educational initiatives for 24 underprivileged students and organizing workshops.</p>
         </div>
       </div>
-      <!-- Experience Item -->
-      <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
-        <div>
-          <h3 class="font-bold text-lg">SIAM JUIT</h3>
-          <p class="text-sm font-medium mt-1">Senior Member</p>
-        </div>
-        <div class="text-sm text-left md:text-right mt-2 md:mt-0">
-          <span class="block font-semibold">Mar 2023 - PRESENT</span>
-          <p class="section-text">Coordinating technical events to enhance engagement within the tech community.</p>
-        </div>
-      </div>
-      <!-- Experience Item -->
-      <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
-        <div>
-          <h3 class="font-bold text-lg">UBC [United Bhangra Crew]</h3>
-          <p class="text-sm font-medium mt-1">Senior Member</p>
-        </div>
-        <div class="text-sm text-left md:text-right mt-2 md:mt-0">
-          <span class="block font-semibold">Sep 2022 - PRESENT</span>
-          <p class="section-text">Showcasing cultural heritage through performances.</p>
-        </div>
-      </div>
-      <!-- Experience Item -->
-      <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
-        <div>
-          <h3 class="font-bold text-lg">University Grants Commission (UGC)</h3>
-          <p class="text-sm font-medium mt-1">UGC Saarthi</p>
-        </div>
-        <div class="text-sm text-left md:text-right mt-2 md:mt-0">
-          <span class="block font-semibold">Jun 2023 - Oct 2024</span>
-          <p class="section-text">Guided students in navigating NEP 2020 initiatives.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Tech Section -->
-  <div id="tech" class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
-    <h2 class="section-heading">TECH</h2>
-    <div class="md:w-1/2 md:mx-auto">
-      <p class="section-text m-2">Technologies / Tools I like working with.</p>
-      <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Deep Learning</span>
-      <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Python</span>
-      <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Machine Learning</span>
-      <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">TensorFlow</span>
-      <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Keras</span>
-      <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">PyTorch</span>
-      <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">OpenCV</span>
-      <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">GitHub</span>
-    </div>
-  </div>
-  
-  <!-- Education Section -->
-  <div id="education" class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
-    <h2 class="section-heading">EDUCATION</h2>
-    <div class="md:w-1/2 md:mx-auto">
-      <p class="section-text m-2">MY Education</p>
-      <div class="text-left py-8 flex content-between border-b border-gray-400">
-        <div class="w-full">
-          <span class="block font-bold">B.Tech. in Computer Science & Engineering</span>
-          <span class="block text-sm mt-3">Jaypee University of Information and Technology, Solan</span>
-        </div>
-        <div class="w-1/2 text-center">
-          <span class="text-sm">2022 - 2026</span>
-          <br>
-          <span class="text-sm">CGPA: 9.15 (till 5th semester)</span>
+    </section>
+    
+    <!-- Experience (Volunteer) Section -->
+    <section id="experience">
+      <div class="w-full bg-gray-100 py-12 px-4 text-center">
+        <h2 class="section-heading">EXPERIENCE</h2>
+        <p class="section-text text-lg mb-8">Where I have volunteered in my College:</p>
+        <div class="md:w-3/4 lg:w-1/2 mx-auto space-y-8">
+          <!-- Experience Item -->
+          <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
+            <div>
+              <h3 class="font-bold text-lg">JYC</h3>
+              <p class="text-sm font-medium mt-1">Coordinator</p>
+            </div>
+            <div class="text-sm text-left md:text-right mt-2 md:mt-0">
+              <span class="block font-semibold">Sep 2022 - PRESENT</span>
+              <p class="section-text">Overseeing educational initiatives for 24 underprivileged students and organizing workshops.</p>
+            </div>
+          </div>
+          <!-- Experience Item -->
+          <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
+            <div>
+              <h3 class="font-bold text-lg">SIAM JUIT</h3>
+              <p class="text-sm font-medium mt-1">Senior Member</p>
+            </div>
+            <div class="text-sm text-left md:text-right mt-2 md:mt-0">
+              <span class="block font-semibold">Mar 2023 - PRESENT</span>
+              <p class="section-text">Coordinating technical events to enhance engagement within the tech community.</p>
+            </div>
+          </div>
+          <!-- Experience Item -->
+          <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
+            <div>
+              <h3 class="font-bold text-lg">UBC [United Bhangra Crew]</h3>
+              <p class="text-sm font-medium mt-1">Senior Member</p>
+            </div>
+            <div class="text-sm text-left md:text-right mt-2 md:mt-0">
+              <span class="block font-semibold">Sep 2022 - PRESENT</span>
+              <p class="section-text">Showcasing cultural heritage through performances.</p>
+            </div>
+          </div>
+          <!-- Experience Item -->
+          <div class="flex flex-col md:flex-row justify-between items-start p-4 border border-gray-300 rounded-lg">
+            <div>
+              <h3 class="font-bold text-lg">University Grants Commission (UGC)</h3>
+              <p class="text-sm font-medium mt-1">UGC Saarthi</p>
+            </div>
+            <div class="text-sm text-left md:text-right mt-2 md:mt-0">
+              <span class="block font-semibold">Jun 2023 - Oct 2024</span>
+              <p class="section-text">Guided students in navigating NEP 2020 initiatives.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="text-left py-8 flex content-between border-b border-gray-400">
-        <div class="w-full">
-          <span class="block font-bold">Class 12th</span>
-          <span class="block text-sm mt-3">Guru Teg Bahadur Public School, Faridkot, Punjab</span>
-        </div>
-        <div class="w-1/2 text-center">
-          <span class="text-sm">2020 - 2022</span>
-          <br>
-          <span class="text-sm">Percentage: 82.80</span>
-        </div>
-      </div>
-      <div class="text-left py-8 flex content-between border-b border-gray-400">
-        <div class="w-full">
-          <span class="block font-bold">Class 10th</span>
-          <span class="block text-sm mt-3">Dasmesh Public School, Faridkot, Punjab</span>
-        </div>
-        <div class="w-1/2 text-center">
-          <span class="text-sm">2007 - 2020</span>
-          <br>
-          <span class="text-sm">Percentage: 93.60</span>
+    </section>
+    
+    <!-- Tech Section -->
+    <section id="tech">
+      <div class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
+        <h2 class="section-heading">TECH</h2>
+        <div class="md:w-1/2 md:mx-auto">
+          <p class="section-text m-2">Technologies / Tools I like working with.</p>
+          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Deep Learning</span>
+          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Python</span>
+          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Machine Learning</span>
+          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">TensorFlow</span>
+          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Keras</span>
+          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">PyTorch</span>
+          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">OpenCV</span>
+          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">GitHub</span>
         </div>
       </div>
-    </div>
-  </div>
-  
-  <!-- Certifications Section -->
-  <div id="certifications" class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
-    <h2 class="section-heading">CERTIFICATIONS</h2>
-    <div class="md:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-      <!-- Certification 1 -->
-      <div class="certification-card bg-white shadow-2xl rounded p-4">
-        <img src="ml-with-python_ibm.png" alt="Machine Learning with Python - IBM" class="w-full object-cover rounded">
-        <p class="mt-2 text-gray-700">Machine Learning with Python - IBM</p>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education">
+      <div class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
+        <h2 class="section-heading">EDUCATION</h2>
+        <div class="md:w-1/2 md:mx-auto">
+          <p class="section-text m-2">MY Education</p>
+          <div class="text-left py-8 flex content-between border-b border-gray-400">
+            <div class="w-full">
+              <span class="block font-bold">B.Tech. in Computer Science & Engineering</span>
+              <span class="block text-sm mt-3">Jaypee University of Information and Technology, Solan</span>
+            </div>
+            <div class="w-1/2 text-center">
+              <span class="text-sm">2022 - 2026</span>
+              <br>
+              <span class="text-sm">CGPA: 9.15 (till 5th semester)</span>
+            </div>
+          </div>
+          <div class="text-left py-8 flex content-between border-b border-gray-400">
+            <div class="w-full">
+              <span class="block font-bold">Class 12th</span>
+              <span class="block text-sm mt-3">Guru Teg Bahadur Public School, Faridkot, Punjab</span>
+            </div>
+            <div class="w-1/2 text-center">
+              <span class="text-sm">2020 - 2022</span>
+              <br>
+              <span class="text-sm">Percentage: 82.80</span>
+            </div>
+          </div>
+          <div class="text-left py-8 flex content-between border-b border-gray-400">
+            <div class="w-full">
+              <span class="block font-bold">Class 10th</span>
+              <span class="block text-sm mt-3">Dasmesh Public School, Faridkot, Punjab</span>
+            </div>
+            <div class="w-1/2 text-center">
+              <span class="text-sm">2007 - 2020</span>
+              <br>
+              <span class="text-sm">Percentage: 93.60</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- Certification 2 -->
-      <div class="certification-card bg-white shadow-2xl rounded p-4">
-        <img src="MYSQL_meta.png" alt="Database Structures and Management with MySQL - Meta" class="w-full object-cover rounded">
-        <p class="mt-2 text-gray-700">Database Structures and Management with MySQL - Meta</p>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <div class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
+        <h2 class="section-heading">CERTIFICATIONS</h2>
+        <div class="md:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <!-- Certification 1 -->
+          <article class="certification-card bg-white shadow-2xl rounded p-4">
+            <img src="ml-with-python_ibm.png" alt="Machine Learning with Python - IBM" class="w-full object-cover rounded" loading="lazy">
+            <p class="mt-2 text-gray-700">Machine Learning with Python - IBM</p>
+          </article>
+          <!-- Certification 2 -->
+          <article class="certification-card bg-white shadow-2xl rounded p-4">
+            <img src="MYSQL_meta.png" alt="Database Structures and Management with MySQL - Meta" class="w-full object-cover rounded" loading="lazy">
+            <p class="mt-2 text-gray-700">Database Structures and Management with MySQL - Meta</p>
+          </article>
+          <!-- Certification 3 -->
+          <article class="certification-card bg-white shadow-2xl rounded p-4">
+            <img src="infosys.png" alt="Basics of Python - Infosys Springboard" class="w-full object-cover rounded" loading="lazy">
+            <p class="mt-2 text-gray-700">Python Foundation - Infosys Springboard</p>
+          </article>
+          <!-- Certification 4 -->
+          <article class="certification-card bg-white shadow-2xl rounded p-4">
+            <img src="michigan.png" alt="Introduction to Data Science in Python - University of Michigan" class="w-full object-cover rounded" loading="lazy">
+            <p class="mt-2 text-gray-700">Introduction to Data Science in Python - University of Michigan</p>
+          </article>
+        </div>
       </div>
-      <!-- Certification 3 -->
-      <div class="certification-card bg-white shadow-2xl rounded p-4">
-        <img src="infosys.png" alt="Basics of Python - Infosys Springboard" class="w-full object-cover rounded">
-        <p class="mt-2 text-gray-700">Python Foundation - Infosys Springboard</p>
-      </div>
-      <!-- Certification 4 -->
-      <div class="certification-card bg-white shadow-2xl rounded p-4">
-        <img src="michigan.png" alt="Introduction to Data Science in Python - University of Michigan" class="w-full object-cover rounded">
-        <p class="mt-2 text-gray-700">Introduction to Data Science in Python - University of Michigan</p>
-      </div>
-    </div>
-  </div>
+    </section>
+  </main>
   
   <footer class="w-full bg-gray-800 text-white text-center py-4">
     <p>&copy; 2024 Ramandeep Singh Makkar</p>
     <div class="flex justify-center gap-4 mt-2">
-      <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400">
+      <a href="https://github.com/RamandeepSinghMakkar" class="hover:text-gray-400" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/ramandeep-singh-makkar" class="hover:text-gray-400">
+      <a href="https://www.linkedin.com/in/ramandeep-singh-makkar" class="hover:text-gray-400" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
     </div>
   </footer>
   
+  <!-- Scripts -->
   <script>
-    function setVisibility() {
-      const elements = document.querySelectorAll('.view-more');
-      const button = document.getElementById('view-projects');
-      const isHidden = elements[0].style.display === 'none';
-      
-      elements.forEach(el => {
-        el.style.display = isHidden ? 'block' : 'none';
-      });
-      
-      button.textContent = isHidden ? 'VIEW LESS' : 'VIEW MORE';
-    }
-  
-    document.querySelectorAll('#navbar a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        // Only prevent default for internal links starting with "#"
-        if (href.startsWith('#')) {
-          e.preventDefault();
-          const targetSection = document.getElementById(href.slice(1));
-          const offset = 100; // Adjust according to your navbar height
-          if (targetSection) {
-            window.scrollTo({
-              top: targetSection.offsetTop - offset,
-              behavior: 'smooth'
-            });
-          }
+    // Preloader removal on window load
+    window.addEventListener("load", function() {
+      const preloader = document.getElementById('preloader');
+      preloader.style.opacity = 0;
+      setTimeout(() => { preloader.style.display = "none"; }, 500);
+    });
+    
+    // Intersection Observer to trigger section fade-ins on scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
         }
       });
+    }, { threshold: 0.2 });
+    
+    sections.forEach(section => {
+      observer.observe(section);
     });
-  
+    
+    // Back to top smooth scroll function
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  </script>
-  <script>
+    
+    // Toggle extra projects visibility
+    function toggleProjects() {
+      const moreProjects = document.getElementById("more-projects");
+      const button = document.getElementById("view-projects");
+      
+      if (moreProjects.style.display === "none" || moreProjects.style.display === "") {
+        moreProjects.style.display = "flex"; // show extra projects
+        button.textContent = "VIEW LESS";
+      } else {
+        moreProjects.style.display = "none"; // hide extra projects
+        button.textContent = "VIEW MORE";
+      }
+    }
+    
+    // Hamburger menu toggle for mobile
     document.addEventListener("DOMContentLoaded", function() {
       var hamburger = document.getElementById("hamburger");
       var navLinks = document.getElementById("nav-links");
@@ -613,29 +579,23 @@
         navLinks.classList.toggle("hidden");
       });
     });
-  </script>
-  <script>
-    function toggleProjects() {
-      const moreProjects = document.getElementById("more-projects");
-      const button = document.getElementById("view-projects");
-      
-      if (moreProjects.style.display === "none") {
-        moreProjects.style.display = "flex"; // show extra projects
-        button.textContent = "VIEW LESS";
-      } else {
-        moreProjects.style.display = "none"; // hide extra projects
-        button.textContent = "VIEW MORE";
+    
+    // Mouse-tracking effect for background (only on larger screens)
+    document.addEventListener("mousemove", function(e) {
+      if(window.innerWidth > 768) {
+        const x = (e.clientX / window.innerWidth) * 10;
+        const y = (e.clientY / window.innerHeight) * 10;
+        document.getElementById("particles-js").style.transform = `translate(${x}px, ${y}px)`;
       }
-    }
+    });
   </script>
-  <script src="index.js"></script>
   <!-- Particles.js library -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
       "particles": {
         "number": {
-          "value": 80,
+          "value": window.innerWidth > 768 ? 80 : 40,
           "density": {
             "enable": true,
             "value_area": 800
@@ -698,5 +658,6 @@
       "retina_detect": true
     });
   </script>
+  <script src="index.js"></script>
 </body>
 </html>
