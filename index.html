@@ -14,58 +14,7 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous" />
-  <style>
-    /* Back-to-top button & Particles container */
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -2;
-      transition: transform 0.2s ease-out;
-    }
-    #back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--primary-color);
-      color: var(--bg-dark);
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 0 8px var(--primary-color);
-      transition: transform 0.3s ease;
-      z-index: 100;
-    }
-    #back-to-top:hover,
-    #back-to-top:focus {
-      transform: scale(1.1);
-      outline: none;
-    }
-    /* Continuous pulse animation on sections */
-    section {
-      position: relative;
-      scroll-margin-top: 10px;
-      padding-top: 60px;
-      margin-top: -60px;
-      opacity: 0;
-    }
-    /* Skip Navigation Link Styling */
-    .skip-nav {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--primary-color);
-      color: var(--bg-dark);
-      padding: 8px 16px;
-      z-index: 1000;
-      transition: top 0.3s;
-    }
-    .skip-nav:focus {
-      top: 0;
-    }
-  </style>
+  
 </head>
 <body class="bg-gray-100">
   <!-- Skip to Content Link for Accessibility -->
@@ -471,16 +420,23 @@
     <section id="tech">
       <div class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
         <h2 class="section-heading">TECH</h2>
-        <div class="md:w-1/2 md:mx-auto">
-          <p class="section-text m-2">Technologies / Tools I like working with.</p>
-          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Deep Learning</span>
-          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Python</span>
-          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Machine Learning</span>
-          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">TensorFlow</span>
-          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">Keras</span>
-          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">PyTorch</span>
-          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">OpenCV</span>
-          <span class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-2">GitHub</span>
+        <div class="tech-box md:w-1/2 md:mx-auto p-4 border border-gray-700 rounded-lg shadow-lg">
+          <p class="section-text m-2">Technologies / Tools I like working with:</p>
+          <div class="skills flex flex-wrap justify-center gap-4">
+            <span class="skill inline-block">Deep Learning</span>
+            <span class="skill inline-block">Python</span>
+            <span class="skill inline-block">Machine Learning</span>
+            <span class="skill inline-block">TensorFlow</span>
+            <span class="skill inline-block">Keras</span>
+            <span class="skill inline-block">PyTorch</span>
+            <span class="skill inline-block">OpenCV</span>
+            <span class="skill inline-block">GitHub</span>
+            <!-- Additional skills added to complete the tech table -->
+            <span class="skill inline-block">SQL</span>
+            <span class="skill inline-block">JavaScript</span>
+            <span class="skill inline-block">Docker</span>
+        
+          </div>
         </div>
       </div>
     </section>
@@ -489,39 +445,24 @@
     <section id="education">
       <div class="w-full bg-gray-100 h-auto text-center md:content-center py-12 px-6">
         <h2 class="section-heading">EDUCATION</h2>
-        <div class="md:w-1/2 md:mx-auto">
+        <!-- New Boxed Container for Education -->
+        <div class="education-box md:w-1/2 md:mx-auto p-6 border border-gray-700 rounded-lg shadow-lg">
           <p class="section-text m-2">MY Education</p>
-          <div class="text-left py-8 flex content-between border-b border-gray-400">
-            <div class="w-full">
+          <div class="text-left py-8 flex flex-col gap-4 border-b border-gray-400">
+            <div>
               <span class="block font-bold">B.Tech. in Computer Science & Engineering</span>
               <span class="block text-sm mt-3">Jaypee University of Information and Technology, Solan</span>
+              <span class="block text-sm">2022 - 2026 | CGPA: 9.15 (till 5th semester)</span>
             </div>
-            <div class="w-1/2 text-center">
-              <span class="text-sm">2022 - 2026</span>
-              <br>
-              <span class="text-sm">CGPA: 9.15 (till 5th semester)</span>
-            </div>
-          </div>
-          <div class="text-left py-8 flex content-between border-b border-gray-400">
-            <div class="w-full">
+            <div>
               <span class="block font-bold">Class 12th</span>
               <span class="block text-sm mt-3">Guru Teg Bahadur Public School, Faridkot, Punjab</span>
+              <span class="block text-sm">2020 - 2022 | Percentage: 82.80</span>
             </div>
-            <div class="w-1/2 text-center">
-              <span class="text-sm">2020 - 2022</span>
-              <br>
-              <span class="text-sm">Percentage: 82.80</span>
-            </div>
-          </div>
-          <div class="text-left py-8 flex content-between border-b border-gray-400">
-            <div class="w-full">
+            <div>
               <span class="block font-bold">Class 10th</span>
               <span class="block text-sm mt-3">Dasmesh Public School, Faridkot, Punjab</span>
-            </div>
-            <div class="w-1/2 text-center">
-              <span class="text-sm">2007 - 2020</span>
-              <br>
-              <span class="text-sm">Percentage: 93.60</span>
+              <span class="block text-sm">2007 - 2020 | Percentage: 93.60</span>
             </div>
           </div>
         </div>

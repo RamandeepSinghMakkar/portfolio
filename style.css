@@ -78,7 +78,6 @@ body {
   transform-origin: bottom left;
 }
 
-/* Navbar with frosted glass effect */
 #welcome-section {
   position: sticky;
   top: 0;
@@ -112,7 +111,6 @@ body {
   margin: 0 8px;
   white-space: nowrap;
   transition: all 0.3s ease-in-out;
-  /* Neon glow effect on text */
   text-shadow: 0 0 3px var(--primary-color);
 }
 #navbar a:last-child {
@@ -145,16 +143,15 @@ section {
   position: relative;
   scroll-margin-top: 10px;
   padding-top: 60px;
-  margin-top: -60px;
-  /* Sections will fade in via Intersection Observer */
+  margin-top: -60px; /* Offset for sticky header */
   transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
 }
 .animate {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* Background for sections */
 .w-full {
   background: var(--bg-darker);
   color: var(--secondary-color);
@@ -192,11 +189,27 @@ h2 {
   animation: underlineExpand 1s forwards;
 }
 
-/* Keyframes for decorative underline animation */
 @keyframes underlineExpand {
   to {
     width: 70px;
   }
+}
+
+/*========================================
+  Animated Separator Between Sections
+========================================*/
+/* For every section except the last, add an animated horizontal line below the content */
+section:not(:last-of-type)::after {
+  content: "";
+  display: block;
+  margin: 20px auto 0 auto;
+  height: 3px;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: width 1s ease-out;
+}
+section:not(:last-of-type).animate::after {
+  width: 50%;
 }
 
 /*========================================
@@ -312,6 +325,38 @@ span.inline-block:focus {
 }
 
 /*========================================
+  Technical Skills Styling
+========================================*/
+.tech-box {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+.skills .skill {
+  background: var(--bg-darker);
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin: 4px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: default;
+}
+.skills .skill:hover {
+  transform: scale(1.1);
+  background: var(--primary-alt);
+}
+
+/*========================================
+  Education Box Styling
+========================================*/
+.education-box {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/*========================================
   Text Helpers
 ========================================*/
 .text-left {
@@ -360,6 +405,12 @@ span.inline-block:focus {
   }
 }
 
+@keyframes underlineExpand {
+  to {
+    width: 70px;
+  }
+}
+
 /* Subtle neon color shift for headings */
 @keyframes colorShift {
   0% { color: var(--primary-color); }
@@ -372,83 +423,6 @@ span.inline-block:focus {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
-}
-
-/*========================================
-  Experience & Research Sections
-========================================*/
-#professional-experience {
-  background-color: var(--bg-darker);
-  color: var(--secondary-color);
-}
-#research-experience {
-  background-color: var(--bg-darker);
-  color: var(--secondary-color);
-  padding: 40px 20px;
-}
-#research-experience h2 {
-  color: var(--primary-color);
-  margin-bottom: 20px;
-  text-align: center;
-}
-.experience-item {
-  margin-bottom: 20px;
-}
-.title-and-date {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-.title {
-  font-weight: bold;
-}
-.date {
-  font-size: 14px;
-  color: #a0a0a0;
-}
-.description {
-  font-size: 14px;
-  line-height: 1.5;
-  margin-left: 1.5em;
-}
-
-/*========================================
-  W-Auto Section (Social & Icons)
-========================================*/
-.w-auto {
-  background-color: var(--bg-light);
-  color: #bfcbd9;
-  border-radius: 8px;
-  margin: 20px auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-}
-.w-auto span {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 5px;
-  color: #bfcbd9;
-  text-align: left;
-}
-.w-auto .w-1/2 {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 15px;
-}
-.w-auto a {
-  color: var(--primary-color);
-  font-size: 20px;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background-color 0.3s, transform 0.3s ease;
-}
-.w-auto a:hover,
-.w-auto a:focus {
-  background-color: var(--primary-color);
-  color: var(--bg-dark);
-  transform: scale(1.1);
 }
 
 /*========================================
@@ -534,4 +508,48 @@ footer a:focus {
   filter: brightness(0.7) contrast(1.2);
   border: 2px solid var(--bg-darker);
   border-radius: 5px;
+}
+
+/* Back-to-top button & Particles container */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  transition: transform 0.2s ease-out;
+}
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: var(--bg-dark);
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px var(--primary-color);
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+#back-to-top:hover,
+#back-to-top:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Skip Navigation Link Styling */
+.skip-nav {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: var(--bg-dark);
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+.skip-nav:focus {
+  top: 0;
 }
