@@ -142,7 +142,7 @@ nav {
 section {
   position: relative;
   scroll-margin-top: 10px;
-  padding-top: 60px;
+  padding: 60px 20px 40px; /* Extra bottom padding to reveal separator */
   margin-top: -60px; /* Offset for sticky header */
   transition: opacity 0.8s ease, transform 0.8s ease;
   opacity: 0;
@@ -150,6 +150,20 @@ section {
 .animate {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* Insert neon separator at the top of every section except the first */
+section:not(:first-child)::before {
+  content: "";
+  display: block;
+  margin: 20px auto 0 auto;
+  height: 3px;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: width 1s ease-out;
+}
+section:not(:first-child).animate::before {
+  width: 50%;
 }
 
 .w-full {
@@ -196,20 +210,14 @@ h2 {
 }
 
 /*========================================
-  Animated Separator Between Sections
+  Container for Education & Experience
 ========================================*/
-/* For every section except the last, add an animated horizontal line below the content */
-section:not(:last-of-type)::after {
-  content: "";
-  display: block;
-  margin: 20px auto 0 auto;
-  height: 3px;
-  width: 0;
-  background-color: var(--primary-color);
-  transition: width 1s ease-out;
-}
-section:not(:last-of-type).animate::after {
-  width: 50%;
+/* Force the inner container in Education and Experience to have consistent spacing */
+#education > .education-box,
+#experience > div {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /*========================================
