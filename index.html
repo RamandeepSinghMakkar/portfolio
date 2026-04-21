@@ -20,6 +20,10 @@
 </head>
 
 <body>
+  <!-- Mouse Spotlight Glow -->
+  <div id="mouse-spotlight"></div>
+  <!-- Cyber Scanlines Overlay -->
+  <div class="scanlines"></div>
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress"></div>
 
@@ -51,11 +55,10 @@
         </div>
         <!-- Introduction Text -->
         <div class="intro-section">
-          <h1 class="section-heading text-glow" style="text-align: left; margin-bottom: 10px; font-size: 3.5rem;">
-            Ramandeep Singh</h1>
-          <p class="section-text mb-6 text-xl text-gray-300">
-            Data Science Engineer / Machine Learning Specialist
-          </p>
+          <h1 id="scramble-name" class="text-5xl md:text-7xl font-bold mb-4 text-glow neon-title" data-value="RAMANDEEP SINGH">RAMANDEEP SINGH</h1>
+          <div class="subtitle-container mb-8">
+            <span id="typing-text" class="text-xl md:text-2xl text-cyan-400 font-mono"></span><span class="cursor">|</span>
+          </div>
 
           <!-- Brand Logos Banner -->
           <div class="brand-banner mb-8">
@@ -512,62 +515,6 @@
     </div>
   </footer>
 
-  <script>
-    // Intersection Observer for Reveal Animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.animate-reveal').forEach(el => revealObserver.observe(el));
-
-    // Nav active link tracking on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.menu-link');
-
-    window.addEventListener('scroll', () => {
-      // Update Scroll Progress Bar
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById("scroll-progress").style.width = scrolled + "%";
-
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    function toggleProjects() {
-      const moreProjects = document.getElementById("more-projects");
-      const btn = document.getElementById("view-projects");
-      if (moreProjects.style.display === "none" || moreProjects.style.display === "") {
-        moreProjects.style.display = "grid";
-        btn.textContent = "View Less";
-      } else {
-        moreProjects.style.display = "none";
-        btn.textContent = "View More Projects";
-      }
-    }
-  </script>
+  <script src="index.js"></script>
 </body>
 </html>
