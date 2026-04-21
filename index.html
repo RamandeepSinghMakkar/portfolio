@@ -19,9 +19,9 @@
 
 </head>
 
-<body class="bg-gray-100">
-  <!-- Skip to Content Link for Accessibility -->
-  <a href="#main" class="skip-nav">Skip to Content</a>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
 
   <!-- Header Section with Navbar -->
   <header>
@@ -59,7 +59,6 @@
 
           <!-- Brand Logos Banner -->
           <div class="brand-banner mb-8">
-            <span class="text-xs text-gray-400 uppercase tracking-widest mr-4 self-center">Experience at:</span>
             <div class="flex gap-6 items-center">
               <img src="make_my_trip.png" alt="MMT" title="MakeMyTrip">
               <img src="amazon.png" alt="Amazon" title="Amazon">
@@ -106,6 +105,8 @@
             <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">Python</span>
             <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">FastAPI</span>
             <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">PostgreSQL</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">Prompt Engineering</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">Git</span>
           </div>
           <ul class="experience-bullets space-y-2 text-gray-300 text-sm">
             <li><i class="fas fa-caret-right text-cyan-500 mr-2"></i>Designed and deployed an automated deduction sheet pipeline using PostgreSQL, Python, Excel, and Google Sheets, reducing manual preparation time from 7 days to 3 hours.</li>
@@ -126,6 +127,13 @@
               </div>
             </div>
           </div>
+          <div class="tech-stack mb-3">
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">LLM Pipelines</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">FastAPI</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">Prompt Engineering</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">Git</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">GitHub</span>
+          </div>
           <ul class="experience-bullets space-y-2 text-gray-300 text-sm">
             <li><i class="fas fa-caret-right text-cyan-500 mr-2"></i>Developed modular, memory-augmented LLM pipelines using DSPy and mem0, enabling tool-based reasoning and document generation at scale.</li>
             <li><i class="fas fa-caret-right text-cyan-500 mr-2"></i>Deployed AI solutions integrating model fine-tuning, semantic memory, and structured feedback loops.</li>
@@ -144,6 +152,14 @@
                 <span>Oct 2024 – Jan 2025</span>
               </div>
             </div>
+          </div>
+          <div class="tech-stack mb-3">
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">XGBoost</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">CNN</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">OpenCV</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">Image Denoising</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">Git</span>
+            <span class="text-xs font-mono px-2 py-1 bg-gray-800 rounded text-cyan-300 border border-gray-700 mr-2">GitHub</span>
           </div>
           <ul class="experience-bullets space-y-2 text-gray-300 text-sm">
             <li><i class="fas fa-caret-right text-cyan-500 mr-2"></i>Engineered a hybrid ensemble model integrating XGBoost and CNN, boosting predictive performance to 97% accuracy.</li>
@@ -518,6 +534,12 @@
     const navLinks = document.querySelectorAll('.menu-link');
 
     window.addEventListener('scroll', () => {
+      // Update Scroll Progress Bar
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("scroll-progress").style.width = scrolled + "%";
+
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
