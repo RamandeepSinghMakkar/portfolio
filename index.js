@@ -106,7 +106,7 @@ function initTypingEffect() {
     const textElement = document.getElementById('typing-text');
     if (!textElement) return;
 
-    const text = "Data Science Engineer / Machine Learning Specialist";
+    const text = "Data Science Engineer / Machine Learning Specialist | 2+ Years Experience";
     let index = 0;
 
     function type() {
